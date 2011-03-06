@@ -1,6 +1,6 @@
 CREATE TABLE xonstat.servers
 (
-  server_id integer NOT NULL,
+  server_id serial NOT NULL,
   "name" character varying(64),
   "location" character varying(100),
   ip_addr character varying(32),
