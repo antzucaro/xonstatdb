@@ -7,7 +7,7 @@ CREATE TABLE xonstat.servers
   max_players integer,
   pure_ind boolean NOT NULL DEFAULT true,
   active_ind boolean NOT NULL DEFAULT true,
-  create_dt timestamp with time zone NOT NULL,
+  create_dt timestamp without time zone NOT NULL,
   CONSTRAINT servers_pk PRIMARY KEY (server_id)
 )
 WITH (

@@ -7,7 +7,7 @@ CREATE TABLE xonstat.player_weapon_stats
   actual integer NOT NULL,
   max integer NOT NULL,
   frags integer NOT NULL,
-  create_dt timestamp with time zone NOT NULL DEFAULT now(),
+  create_dt timestamp without time zone NOT NULL DEFAULT now(),
   CONSTRAINT player_weapon_stats_pk PRIMARY KEY (player_weapon_stats_id),
   CONSTRAINT player_weapon_stats_fk001 FOREIGN KEY (player_id)
       REFERENCES xonstat.players (player_id) MATCH SIMPLE

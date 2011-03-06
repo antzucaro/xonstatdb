@@ -3,7 +3,7 @@ CREATE TABLE xonstat.hashkeys
   player_id integer NOT NULL,
   hashkey character varying(44) NOT NULL,
   active_ind boolean NOT NULL DEFAULT true,
-  create_dt timestamp with time zone NOT NULL DEFAULT now(),
+  create_dt timestamp without time zone NOT NULL DEFAULT now(),
   CONSTRAINT hashkeys_pk PRIMARY KEY (player_id, hashkey),
   CONSTRAINT hashkeys_fk001 FOREIGN KEY (player_id)
       REFERENCES xonstat.players (player_id) MATCH SIMPLE

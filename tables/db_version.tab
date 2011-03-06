@@ -2,7 +2,7 @@ CREATE TABLE xonstat.db_version
 (
   "version" character varying(15) NOT NULL,
   descr character varying(100) NOT NULL,
-  create_dt timestamp with time zone NOT NULL DEFAULT now(),
+  create_dt timestamp without time zone NOT NULL DEFAULT now(),
   CONSTRAINT db_version_pk PRIMARY KEY (version)
 )
 WITH (
