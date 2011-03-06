@@ -1,6 +1,6 @@
 CREATE TABLE xonstat.player_weapon_stats
 (
-  player_weapon_stats_id serial NOT NULL,
+  player_weapon_stats_id bigserial NOT NULL,
   player_id integer NOT NULL,
   game_id bigint NOT NULL,
   weapon_cd character varying(3) NOT NULL,
