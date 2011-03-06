@@ -4,7 +4,7 @@ CREATE TABLE xonstat.games
   start_dt timestamp with time zone NOT NULL,
   game_type_cd character varying(10) NOT NULL,
   server_id integer NOT NULL,
-  map_id serial NOT NULL,
+  map_id integer NOT NULL,
   duration interval,
   winner integer,
   create_dt timestamp with time zone NOT NULL DEFAULT now(),

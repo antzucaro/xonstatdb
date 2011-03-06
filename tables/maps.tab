@@ -1,6 +1,6 @@
 CREATE TABLE xonstat.maps
 (
-  map_id integer NOT NULL,
+  map_id serial NOT NULL,
   "name" character varying(64) NOT NULL,
   "version" integer NOT NULL DEFAULT 1,
   pk3_name character varying(100),
