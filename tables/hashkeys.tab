@@ -1,6 +1,6 @@
 CREATE TABLE xonstat.hashkeys
 (
-  player_id serial NOT NULL,
+  player_id integer NOT NULL,
   hashkey character varying(44) NOT NULL,
   active_ind boolean NOT NULL DEFAULT true,
   create_dt timestamp with time zone NOT NULL DEFAULT now(),

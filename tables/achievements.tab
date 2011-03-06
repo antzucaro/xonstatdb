@@ -2,7 +2,7 @@ CREATE TABLE xonstat.achievements
 (
   achievement_id serial NOT NULL,
   achievement_cd integer NOT NULL,
-  player_id serial NOT NULL,
+  player_id integer NOT NULL,
   create_dt timestamp with time zone NOT NULL DEFAULT now(),
   CONSTRAINT achievements_pk PRIMARY KEY (achievement_id),
   CONSTRAINT achievements_fk001 FOREIGN KEY (achievement_cd)
