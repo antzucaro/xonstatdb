@@ -19,20 +19,19 @@ Next, create the database itself:
 
 Create the schema in which all of the xonstat tables will reside:
 
-CREATE SCHEMA xonstat
+    CREATE SCHEMA xonstat
        AUTHORIZATION xonstat;
 
 Navigate to the 'build' directory. Log into the database as the 
 admin user created above and issue the following to build the
 initial tables:
 
-    TODO
+    \i build/build_full.sql
+
+    *Note: You will see a lot of NOTICE messages. This is normal.
 
 TODO:
 
 - Define indexes
 - Audit report SQL to verify index usage 
-- Review datatypes to ensure no truncation occurs. 
-- Review plurality in table names
-- Review for usage of serial datatypes in foreign keys
-- Review regular serials vs bigserials
+- ? Partition games, player_game_stats, player_weapon_stats via inheritance
