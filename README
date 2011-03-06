@@ -1,0 +1,38 @@
+This is the source for xonstatdb, the Xonotic Statistics database.
+All code herein is intended for the PostgreSQL database management server.
+
+To build, first create the user that will own all of the objects in the 
+database. You must run this as an administrator user in your cluster.
+See your operating system's guidelines for how this is set up on 
+your system:
+    
+    create user xonstat with password 'xonstat';
+
+    *Note: please change this password
+
+Next, create the database itself:
+
+    CREATE DATABASE xonstatdb
+      WITH ENCODING='UTF8'
+        OWNER=xonstat
+        CONNECTION LIMIT=-1;
+
+Create the schema in which all of the xonstat tables will reside:
+
+CREATE SCHEMA xonstat
+       AUTHORIZATION xonstat;
+
+Navigate to the 'build' directory. Log into the database as the 
+admin user created above and issue the following to build the
+initial tables:
+
+    TODO
+
+TODO:
+
+- Define indexes
+- Audit report SQL to verify index usage 
+- Review datatypes to ensure no truncation occurs. 
+- Review plurality in table names
+- Review for usage of serial datatypes in foreign keys
+- Review regular serials vs bigserials

@@ -1,0 +1,12 @@
+CREATE TABLE xonstat.players
+(
+  player_id serial NOT NULL,
+  nick character varying(64),
+  "location" character varying(100),
+  create_dt timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT players_pk PRIMARY KEY (player_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.players OWNER TO xonstat;

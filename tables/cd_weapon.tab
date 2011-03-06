@@ -1,0 +1,11 @@
+CREATE TABLE xonstat.cd_weapon
+(
+  weapon_cd character varying(3) NOT NULL,
+  descr character varying(100) NOT NULL,
+  active_ind boolean NOT NULL DEFAULT true,
+  CONSTRAINT cd_weapon_pk PRIMARY KEY (weapon_cd)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.cd_weapon OWNER TO xonstat;

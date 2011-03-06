@@ -1,0 +1,26 @@
+CREATE TABLE xonstat.player_weapon_stats
+(
+  player_weapon_stats_id serial NOT NULL,
+  player_id serial NOT NULL,
+  game_id bigint NOT NULL,
+  weapon_cd character varying(3) NOT NULL,
+  actual integer NOT NULL,
+  max integer NOT NULL,
+  frags integer NOT NULL,
+  create_dt timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT player_weapon_stats_pk PRIMARY KEY (player_weapon_stats_id),
+  CONSTRAINT player_weapon_stats_fk001 FOREIGN KEY (player_id)
+      REFERENCES xonstat.players (player_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT player_weapon_stats_fk002 FOREIGN KEY (game_id)
+      REFERENCES xonstat.games (game_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT player_weapon_stats_fk003 FOREIGN KEY (weapon_cd)
+      REFERENCES xonstat.cd_weapon (weapon_cd) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT player_weapon_stats_uk001 UNIQUE (player_id, game_id, weapon_cd)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.player_weapon_stats OWNER TO xonstat;

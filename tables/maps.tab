@@ -1,0 +1,13 @@
+CREATE TABLE xonstat.maps
+(
+  map_id integer NOT NULL,
+  "name" character varying(64) NOT NULL,
+  "version" integer NOT NULL DEFAULT 1,
+  pk3_name character varying(100),
+  curl_url character varying(300),
+  CONSTRAINT maps_pk PRIMARY KEY (map_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.maps OWNER TO xonstat;

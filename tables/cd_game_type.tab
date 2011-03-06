@@ -1,0 +1,11 @@
+CREATE TABLE xonstat.cd_game_type
+(
+  game_type_cd character varying(10) NOT NULL,
+  descr character varying(100) NOT NULL,
+  active_ind boolean NOT NULL DEFAULT true,
+  CONSTRAINT cd_game_type_pk PRIMARY KEY (game_type_cd)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.cd_game_type OWNER TO xonstat;

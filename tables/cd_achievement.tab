@@ -1,0 +1,13 @@
+CREATE TABLE xonstat.cd_achievement
+(
+  achievement_cd integer NOT NULL,
+  descr character varying(100) NOT NULL,
+  "limit" integer,
+  active_ind boolean NOT NULL DEFAULT true,
+  CONSTRAINT cd_achievement_pk PRIMARY KEY (achievement_cd)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.cd_achievement OWNER TO xonstat;
+

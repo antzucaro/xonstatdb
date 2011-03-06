@@ -1,0 +1,16 @@
+CREATE TABLE xonstat.map_game_types
+(
+  map_id integer NOT NULL,
+  game_type_cd character varying(10) NOT NULL,
+  CONSTRAINT map_game_types_pk PRIMARY KEY (map_id, game_type_cd),
+  CONSTRAINT map_game_types_fk001 FOREIGN KEY (map_id)
+      REFERENCES xonstat.maps (map_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT map_game_types_fk002 FOREIGN KEY (game_type_cd)
+      REFERENCES xonstat.cd_game_type (game_type_cd) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.map_game_type OWNER TO xonstat;

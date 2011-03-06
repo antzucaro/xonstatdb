@@ -1,0 +1,16 @@
+CREATE TABLE xonstat.servers
+(
+  server_id integer NOT NULL,
+  "name" character varying(64),
+  "location" character varying(100),
+  ip_addr character varying(32),
+  max_players integer,
+  pure_ind boolean NOT NULL DEFAULT true,
+  active_ind boolean NOT NULL DEFAULT true,
+  create_dt timestamp with time zone NOT NULL,
+  CONSTRAINT servers_pk PRIMARY KEY (server_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.servers OWNER TO xonstat;

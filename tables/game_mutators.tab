@@ -1,0 +1,16 @@
+CREATE TABLE xonstat.game_mutators
+(
+  game_id bigint NOT NULL,
+  mutator_cd integer NOT NULL,
+  CONSTRAINT game_mutators_pk PRIMARY KEY (game_id, mutator_cd),
+  CONSTRAINT game_mutators_fk001 FOREIGN KEY (game_id)
+      REFERENCES xonstat.games (game_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT game_mutators_fk002 FOREIGN KEY (mutator_cd)
+      REFERENCES xonstat.cd_mutator (mutator_cd) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.game_mutators OWNER TO xonstat;

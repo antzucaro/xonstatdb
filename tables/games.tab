@@ -1,0 +1,25 @@
+CREATE TABLE xonstat.games
+(
+  game_id bigserial NOT NULL,
+  start_dt timestamp with time zone NOT NULL,
+  game_type_cd character varying(10) NOT NULL,
+  server_id integer NOT NULL,
+  map_id serial NOT NULL,
+  duration interval,
+  winner integer,
+  create_dt timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT games_pk PRIMARY KEY (game_id),
+  CONSTRAINT games_fk001 FOREIGN KEY (game_type_cd)
+      REFERENCES xonstat.cd_game_type (game_type_cd) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT games_fk002 FOREIGN KEY (server_id)
+      REFERENCES xonstat.servers (server_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT games_fk003 FOREIGN KEY (map_id)
+      REFERENCES xonstat.maps (map_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.games OWNER TO xonstat;
