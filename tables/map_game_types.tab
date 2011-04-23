@@ -13,4 +13,4 @@ CREATE TABLE xonstat.map_game_types
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE xonstat.map_game_type OWNER TO xonstat;
+ALTER TABLE xonstat.map_game_types OWNER TO xonstat;
