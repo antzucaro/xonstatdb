@@ -5,6 +5,7 @@ CREATE TABLE xonstat.servers
   "location" character varying(100),
   ip_addr character varying(32),
   max_players integer,
+  revision character varying(50),
   pure_ind boolean NOT NULL DEFAULT true,
   active_ind boolean NOT NULL DEFAULT true,
   create_dt timestamp without time zone NOT NULL DEFAULT now(),
