@@ -6,6 +6,8 @@ CREATE TABLE xonstat.player_game_stats
   stat_type character varying(1),
   nick character varying(64),
   team integer,
+  "rank" integer,
+  alivetime interval,
   kills integer,
   deaths integer,
   suicides integer,
