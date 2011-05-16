@@ -3,6 +3,7 @@ CREATE TABLE xonstat.player_weapon_stats
   player_weapon_stats_id bigserial NOT NULL,
   player_id integer NOT NULL,
   game_id bigint NOT NULL,
+  nick character varying(64),
   weapon_cd character varying(15) NOT NULL,
   actual integer NOT NULL default 0,
   max integer NOT NULL default 0,
@@ -20,7 +21,7 @@ CREATE TABLE xonstat.player_weapon_stats
   CONSTRAINT player_weapon_stats_fk003 FOREIGN KEY (weapon_cd)
       REFERENCES xonstat.cd_weapon (weapon_cd) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
-  CONSTRAINT player_weapon_stats_uk001 UNIQUE (player_id, game_id, weapon_cd)
+  CONSTRAINT player_weapon_stats_uk001 UNIQUE (player_id, game_id, weapon_cd, nick)
 )
 WITH (
   OIDS=FALSE
