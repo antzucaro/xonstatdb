@@ -70,8 +70,8 @@ values('tdm', 'Team Deathmatch');
 
 -- weapons
 insert into cd_weapon(weapon_cd, descr) values('laser', 'Laser');
-insert into cd_weapon(weapon_cd, descr) values('sg', 'Shotgun');
-insert into cd_weapon(weapon_cd, descr) values('uzi', 'Uzi');
+insert into cd_weapon(weapon_cd, descr) values('shotgun', 'Shotgun');
+insert into cd_weapon(weapon_cd, descr) values('uzi', 'Machine Gun');
 insert into cd_weapon(weapon_cd, descr) values('gl', 'Mortar');
 insert into cd_weapon(weapon_cd, descr) values('electro', 'Electro');
 insert into cd_weapon(weapon_cd, descr) values('crylink', 'Crylink');
@@ -79,11 +79,14 @@ insert into cd_weapon(weapon_cd, descr) values('nex', 'Nex');
 insert into cd_weapon(weapon_cd, descr) values('hagar', 'Hagar');
 insert into cd_weapon(weapon_cd, descr) values('rl', 'Rocket Launcher');
 insert into cd_weapon(weapon_cd, descr) values('minstanex', 'MinstaNex');
-insert into cd_weapon(weapon_cd, descr) values('rifle', 'Camping Rifle');
+insert into cd_weapon(weapon_cd, descr) values('campingrifle', 'Camping Rifle');
 insert into cd_weapon(weapon_cd, descr) values('fireball', 'Fireball');
 insert into cd_weapon(weapon_cd, descr) values('minelayer', 'Minelayer');
 insert into cd_weapon(weapon_cd, descr) values('seeker', 'T.A.G. Seeker');
-insert into cd_weapon(weapon_cd, descr) values('tuba', '@#!%''n Tuba');
+insert into cd_weapon(weapon_cd, descr) values('tuba', '@!#%''n Tuba');
+insert into cd_weapon(weapon_cd, descr) values('hlac', 'Heavy Laser Assault Cannon');
+insert into cd_weapon(weapon_cd, descr) values('hookgun', 'Grappling Hook');
+insert into cd_weapon(weapon_cd, descr) values('porto', 'Port-O-Launch');
 
 -- achievements
 insert into cd_achievement(achievement_cd, descr, active_ind)
