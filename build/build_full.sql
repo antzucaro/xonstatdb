@@ -79,7 +79,7 @@ insert into cd_weapon(weapon_cd, descr) values('nex', 'Nex');
 insert into cd_weapon(weapon_cd, descr) values('hagar', 'Hagar');
 insert into cd_weapon(weapon_cd, descr) values('rocketlauncher', 'Rocket Launcher');
 insert into cd_weapon(weapon_cd, descr) values('minstanex', 'MinstaNex');
-insert into cd_weapon(weapon_cd, descr) values('sniperrifle', 'Camping Rifle');
+insert into cd_weapon(weapon_cd, descr) values('rifle', 'Camping Rifle');
 insert into cd_weapon(weapon_cd, descr) values('fireball', 'Fireball');
 insert into cd_weapon(weapon_cd, descr) values('minelayer', 'Minelayer');
 insert into cd_weapon(weapon_cd, descr) values('seeker', 'T.A.G. Seeker');
