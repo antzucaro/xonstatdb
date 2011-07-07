@@ -166,6 +166,11 @@ values(15, 'g_jetpack');
 insert into players (nick) values ('Bot');
 insert into players (nick) values ('Untracked Player');
 
+-- triggers 
+\i triggers/games_ins_trg.sql
+\i triggers/player_game_stats_ins_trg.sql
+\i triggers/player_weapon_stats_ins_trg.sql
+
 -- version tracking
 insert into db_version(version, descr) values('1.0.0', 'Initial build');
 
