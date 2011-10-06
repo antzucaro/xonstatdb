@@ -17,21 +17,24 @@ Next, create the database itself:
         OWNER=xonstat
         CONNECTION LIMIT=-1;
 
+Next, log into the newly created database using the user account
+you just created:
+
+    psql -U xonstat xonstatdb
+
 Create the schema in which all of the xonstat tables will reside:
 
     CREATE SCHEMA xonstat
        AUTHORIZATION xonstat;
 
-Navigate to the 'build' directory. Log into the database as the 
-admin user created above and issue the following to build the
-initial tables:
+Create the pgplsql language:
+
+    CREATE LANGUAGE pgplsql;
+
+Back in the command shell, navigate to the 'build' directory. 
+Log into the database as the admin user created above and issue 
+the following to build the initial tables:
 
     \i build/build_full.sql
 
     *Note: You will see a lot of NOTICE messages. This is normal.
-
-TODO:
-
-- Define indexes
-- Audit report SQL to verify index usage 
-- ? Partition games, player_game_stats, player_weapon_stats via inheritance
