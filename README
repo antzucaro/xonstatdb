@@ -29,7 +29,7 @@ Create the schema in which all of the xonstat tables will reside:
 
 Create the pgplsql language:
 
-    CREATE LANGUAGE pgplsql;
+    CREATE LANGUAGE plpgsql;
 
 Back in the command shell, navigate to the 'build' directory. 
 Log into the database as the admin user created above and issue 
