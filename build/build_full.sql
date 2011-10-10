@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists player_nicks cascade;
 drop table if exists db_version cascade;
 drop table if exists hashkeys cascade;
 drop table if exists player_weapon_stats cascade;
@@ -31,6 +32,7 @@ drop table if exists players cascade;
 \i tables/player_weapon_stats.tab
 \i tables/hashkeys.tab
 \i tables/db_version.tab
+\i tables/player_nicks.tab
 
 begin;
 
