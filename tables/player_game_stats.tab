@@ -30,8 +30,7 @@ CREATE TABLE xonstat.player_game_stats
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT player_game_stats_fk002 FOREIGN KEY (game_id)
       REFERENCES xonstat.games (game_id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION,
-  CONSTRAINT player_game_stats_uk001 UNIQUE (player_id, game_id)
+      ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
   OIDS=FALSE
