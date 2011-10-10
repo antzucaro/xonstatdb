@@ -31,7 +31,7 @@ Create the pgplsql language:
 
     CREATE LANGUAGE plpgsql;
 
-Back in the command shell, navigate to the 'build' directory. 
+Back in the command shell, navigate to the root directory. 
 Log into the database as the admin user created above and issue 
 the following to build the initial tables:
 
