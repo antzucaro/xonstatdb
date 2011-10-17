@@ -1,7 +1,7 @@
 CREATE TABLE xonstat.players
 (
   player_id serial NOT NULL,
-  nick character varying(64),
+  nick character varying(128),
   "location" character varying(100),
   create_dt timestamp without time zone NOT NULL DEFAULT now(),
   CONSTRAINT players_pk PRIMARY KEY (player_id)

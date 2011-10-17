@@ -3,7 +3,7 @@ CREATE TABLE xonstat.player_game_stats
   player_game_stat_id bigserial NOT NULL,
   player_id integer NOT NULL,
   game_id bigint NOT NULL,
-  nick character varying(64),
+  nick character varying(128),
   team integer,
   "rank" integer,
   alivetime interval,
