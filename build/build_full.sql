@@ -5,28 +5,28 @@ drop table if exists hashkeys cascade;
 drop table if exists player_weapon_stats cascade;
 drop table if exists achievements cascade;
 drop table if exists cd_achievement cascade;
-drop table if exists game_mutators cascade;
+--drop table if exists game_mutators cascade;
 drop table if exists player_game_stats cascade;
 drop table if exists games cascade;
-drop table if exists map_game_types cascade;
+--drop table if exists map_game_types cascade;
 drop table if exists maps cascade;
 drop table if exists servers cascade;
 drop table if exists cd_game_type cascade;
 drop table if exists cd_weapon cascade;
-drop table if exists cd_mutator cascade;
+--drop table if exists cd_mutator cascade;
 drop table if exists players cascade;
 
 -- table definitions
 \i tables/players.tab
-\i tables/cd_mutator.tab
+--\i tables/cd_mutator.tab
 \i tables/cd_game_type.tab
 \i tables/cd_weapon.tab
 \i tables/servers.tab
 \i tables/maps.tab
-\i tables/map_game_types.tab
+--\i tables/map_game_types.tab
 \i tables/games.tab
 \i tables/player_game_stats.tab
-\i tables/game_mutators.tab
+--\i tables/game_mutators.tab
 \i tables/cd_achievement.tab
 \i tables/achievements.tab
 \i tables/player_weapon_stats.tab
