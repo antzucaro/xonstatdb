@@ -1,0 +1,15 @@
+CREATE TABLE xonstat.server_hashkeys
+(
+  server_id integer NOT NULL,
+  hashkey character varying(44) NOT NULL,
+  active_ind boolean NOT NULL DEFAULT true,
+  create_dt timestamp without time zone NOT NULL DEFAULT now(),
+  CONSTRAINT server_hashkeys_pk PRIMARY KEY (server_id, hashkey),
+  CONSTRAINT server_hashkeys_fk001 FOREIGN KEY (server_id)
+      REFERENCES xonstat.servers (server_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.server_hashkeys OWNER TO xonstat;
