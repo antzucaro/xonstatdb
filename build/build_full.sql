@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists server_hashkeys cascade;
 drop table if exists player_nicks cascade;
 drop table if exists db_version cascade;
 drop table if exists hashkeys cascade;
@@ -33,6 +34,7 @@ drop table if exists players cascade;
 \i tables/hashkeys.tab
 \i tables/db_version.tab
 \i tables/player_nicks.tab
+\i tables/server_hashkeys.tab
 
 begin;
 
@@ -133,36 +135,36 @@ insert into cd_achievement(achievement_cd, descr, active_ind)
 values(20,'Be the highest scorer in a game.', 'Y');
 
 -- mutators
-insert into cd_mutator(mutator_cd, name)
-values(1, 'g_dodging');
-insert into cd_mutator(mutator_cd, name)
-values(2, 'g_minstagib');
-insert into cd_mutator(mutator_cd, name)
-values(3, 'g_nix');
-insert into cd_mutator(mutator_cd, name)
-values(4, 'g_rocket_flying');
-insert into cd_mutator(mutator_cd, name)
-values(5, 'g_weaponarena');
-insert into cd_mutator(mutator_cd, name)
-values(6, 'g_start_weapon_laser');
-insert into cd_mutator(mutator_cd, name)
-values(7, 'sv_gravity');
-insert into cd_mutator(mutator_cd, name)
-values(8, 'g_cloaked');
-insert into cd_mutator(mutator_cd, name)
-values(9, 'g_grappling_hook');
-insert into cd_mutator(mutator_cd, name)
-values(10, 'g_midair');
-insert into cd_mutator(mutator_cd, name)
-values(11, 'g_vampire');
-insert into cd_mutator(mutator_cd, name)
-values(12, 'g_pinata');
-insert into cd_mutator(mutator_cd, name)
-values(13, 'g_weapon_stay');
-insert into cd_mutator(mutator_cd, name)
-values(14, 'g_bloodloss');
-insert into cd_mutator(mutator_cd, name)
-values(15, 'g_jetpack');
+--insert into cd_mutator(mutator_cd, name)
+--values(1, 'g_dodging');
+--insert into cd_mutator(mutator_cd, name)
+--values(2, 'g_minstagib');
+--insert into cd_mutator(mutator_cd, name)
+--values(3, 'g_nix');
+--insert into cd_mutator(mutator_cd, name)
+--values(4, 'g_rocket_flying');
+--insert into cd_mutator(mutator_cd, name)
+--values(5, 'g_weaponarena');
+--insert into cd_mutator(mutator_cd, name)
+--values(6, 'g_start_weapon_laser');
+--insert into cd_mutator(mutator_cd, name)
+--values(7, 'sv_gravity');
+--insert into cd_mutator(mutator_cd, name)
+--values(8, 'g_cloaked');
+--insert into cd_mutator(mutator_cd, name)
+--values(9, 'g_grappling_hook');
+--insert into cd_mutator(mutator_cd, name)
+--values(10, 'g_midair');
+--insert into cd_mutator(mutator_cd, name)
+--values(11, 'g_vampire');
+--insert into cd_mutator(mutator_cd, name)
+--values(12, 'g_pinata');
+--insert into cd_mutator(mutator_cd, name)
+--values(13, 'g_weapon_stay');
+--insert into cd_mutator(mutator_cd, name)
+--values(14, 'g_bloodloss');
+--insert into cd_mutator(mutator_cd, name)
+--values(15, 'g_jetpack');
 
 -- bots and untracked players have special records in player
 insert into players (nick) values ('Bot');
