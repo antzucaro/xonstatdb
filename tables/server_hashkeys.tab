@@ -7,7 +7,8 @@ CREATE TABLE xonstat.server_hashkeys
   CONSTRAINT server_hashkeys_pk PRIMARY KEY (server_id, hashkey),
   CONSTRAINT server_hashkeys_fk001 FOREIGN KEY (server_id)
       REFERENCES xonstat.servers (server_id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT server_hashkeys_uk001 UNIQUE (hashkey)
 )
 WITH (
   OIDS=FALSE

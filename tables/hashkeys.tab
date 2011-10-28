@@ -7,7 +7,8 @@ CREATE TABLE xonstat.hashkeys
   CONSTRAINT hashkeys_pk PRIMARY KEY (player_id, hashkey),
   CONSTRAINT hashkeys_fk001 FOREIGN KEY (player_id)
       REFERENCES xonstat.players (player_id) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT hashkeys_uk001 UNIQUE (hashkey)
 )
 WITH (
   OIDS=FALSE
