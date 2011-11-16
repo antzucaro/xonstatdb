@@ -4,7 +4,7 @@ CREATE TABLE xonstat.players
   nick character varying(128),
   stripped_nick character varying(128),
   "location" character varying(100),
-  create_dt timestamp without time zone NOT NULL DEFAULT now(),
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT players_pk PRIMARY KEY (player_id)
 )
 WITH (

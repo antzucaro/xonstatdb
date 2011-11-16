@@ -3,7 +3,7 @@ CREATE TABLE xonstat.achievements
   achievement_id serial NOT NULL,
   achievement_cd integer NOT NULL,
   player_id integer NOT NULL,
-  create_dt timestamp without time zone NOT NULL DEFAULT now(),
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT achievements_pk PRIMARY KEY (achievement_id),
   CONSTRAINT achievements_fk001 FOREIGN KEY (achievement_cd)
       REFERENCES xonstat.cd_achievement (achievement_cd) MATCH SIMPLE

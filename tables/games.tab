@@ -7,7 +7,7 @@ CREATE TABLE xonstat.games
   map_id integer NOT NULL,
   duration interval,
   winner integer,
-  create_dt timestamp without time zone NOT NULL DEFAULT now(),
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT games_pk PRIMARY KEY (game_id),
   CONSTRAINT games_fk001 FOREIGN KEY (game_type_cd)
       REFERENCES xonstat.cd_game_type (game_type_cd) MATCH SIMPLE
