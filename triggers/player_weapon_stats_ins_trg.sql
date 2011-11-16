@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION player_weapon_stats_ins()
+CREATE OR REPLACE FUNCTION player_weapon_stats_ins()
 RETURNS TRIGGER AS $$
 BEGIN
     IF (NEW.create_dt >= DATE '2011-04-01' AND NEW.create_dt < DATE '2011-07-01') THEN
