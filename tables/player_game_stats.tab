@@ -23,7 +23,7 @@ CREATE TABLE xonstat.player_game_stats
   pushes integer,
   pushed integer,
   carrier_frags integer,
-  create_dt timestamp without time zone NOT NULL,
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT player_game_stats_pk PRIMARY KEY (player_game_stat_id),
   CONSTRAINT player_game_stats_fk001 FOREIGN KEY (player_id)
       REFERENCES xonstat.players (player_id) MATCH SIMPLE
