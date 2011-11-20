@@ -11,3 +11,5 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE xonstat.players OWNER TO xonstat;
+
+CREATE INDEX players_ix01 ON players ((upper(stripped_nick));
