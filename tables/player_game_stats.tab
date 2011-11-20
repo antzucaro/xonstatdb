@@ -38,7 +38,6 @@ WITH (
 );
 
 CREATE INDEX player_game_stats_ix01 on player_game_stats(create_dt);
-CREATE INDEX player_game_stats_ix02 on player_game_stats(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats OWNER TO xonstat;
 
 
@@ -47,7 +46,6 @@ CREATE TABLE xonstat.player_game_stats_2011Q2 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2011Q2_ix01 on player_game_stats_2011Q2(create_dt);
-CREATE INDEX pgstats_2011Q2_ix02 on player_game_stats_2011Q2(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2011Q2 OWNER TO xonstat;
 
 
@@ -56,7 +54,6 @@ CREATE TABLE xonstat.player_game_stats_2011Q3 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2011Q3_ix01 on player_game_stats_2011Q3(create_dt);
-CREATE INDEX pgstats_2011Q3_ix02 on player_game_stats_2011Q3(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2011Q3 OWNER TO xonstat;
 
 
@@ -65,7 +62,6 @@ CREATE TABLE xonstat.player_game_stats_2011Q4 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2011Q4_ix01 on player_game_stats_2011Q4(create_dt);
-CREATE INDEX pgstats_2011Q4_ix02 on player_game_stats_2011Q4(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2011Q4 OWNER TO xonstat;
 
 
@@ -74,7 +70,6 @@ CREATE TABLE xonstat.player_game_stats_2012Q1 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2012Q1_ix01 on player_game_stats_2012Q1(create_dt);
-CREATE INDEX pgstats_2012Q1_ix02 on player_game_stats_2012Q1(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2012Q1 OWNER TO xonstat;
 
 
@@ -83,7 +78,6 @@ CREATE TABLE xonstat.player_game_stats_2012Q2 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2012Q2_ix01 on player_game_stats_2012Q2(create_dt);
-CREATE INDEX pgstats_2012Q2_ix02 on player_game_stats_2012Q2(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2012Q2 OWNER TO xonstat;
 
 
@@ -92,7 +86,6 @@ CREATE TABLE xonstat.player_game_stats_2012Q3 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2012Q3_ix01 on player_game_stats_2012Q3(create_dt);
-CREATE INDEX pgstats_2012Q3_ix02 on player_game_stats_2012Q3(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2012Q3 OWNER TO xonstat;
 
 
@@ -101,7 +94,6 @@ CREATE TABLE xonstat.player_game_stats_2012Q4 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2012Q4_ix01 on player_game_stats_2012Q4(create_dt);
-CREATE INDEX pgstats_2012Q4_ix02 on player_game_stats_2012Q4(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2012Q4 OWNER TO xonstat;
 
 
@@ -110,7 +102,6 @@ CREATE TABLE xonstat.player_game_stats_2013Q1 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2013Q1_ix01 on player_game_stats_2013Q1(create_dt);
-CREATE INDEX pgstats_2013Q1_ix02 on player_game_stats_2013Q1(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2013Q1 OWNER TO xonstat;
 
 
@@ -119,6 +110,5 @@ CREATE TABLE xonstat.player_game_stats_2013Q2 (
 ) INHERITS (player_game_stats);
 
 CREATE INDEX player_game_stats_2013Q2_ix01 on player_game_stats_2013Q2(create_dt);
-CREATE INDEX pgstats_2013Q2_ix02 on player_game_stats_2013Q2(upper(stripped_nick));
 ALTER TABLE xonstat.player_game_stats_2013Q2 OWNER TO xonstat;
 
