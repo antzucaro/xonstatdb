@@ -19,7 +19,7 @@ CREATE TABLE xonstat.games
   CONSTRAINT games_fk003 FOREIGN KEY (map_id)
       REFERENCES xonstat.maps (map_id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
-  CONSTRAINT games_uk001 UNIQUE KEY (server_id, match_id)
+  CONSTRAINT games_uk001 UNIQUE (server_id, match_id)
 )
 WITH (
   OIDS=FALSE
