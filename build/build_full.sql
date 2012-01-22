@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists player_ranks_history cascade;
 drop table if exists player_ranks cascade;
 drop table if exists player_elos cascade;
 drop table if exists player_nicks cascade;
@@ -37,6 +38,7 @@ drop table if exists players cascade;
 \i tables/player_nicks.tab
 \i tables/player_elos.tab
 \i tables/player_ranks.tab
+\i tables/player_ranks_history.tab
 
 begin;
 
