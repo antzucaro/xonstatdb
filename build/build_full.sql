@@ -56,7 +56,7 @@ values('dm', 'Deathmatch');
 insert into cd_game_type(game_type_cd, descr)
 values('dom', 'Domination');
 insert into cd_game_type(game_type_cd, descr)
-values('freezetag', 'Freezetag');
+values('ft', 'Freezetag');
 insert into cd_game_type(game_type_cd, descr)
 values('ka', 'Keepaway');
 insert into cd_game_type(game_type_cd, descr)
@@ -64,7 +64,7 @@ values('kh', 'Keyhunt');
 insert into cd_game_type(game_type_cd, descr)
 values('lms', 'Last Man Standing');
 insert into cd_game_type(game_type_cd, descr)
-values('nexball', 'Nexball');
+values('nb', 'Nexball');
 insert into cd_game_type(game_type_cd, descr)
 values('ons', 'Onslaught');
 insert into cd_game_type(game_type_cd, descr)
