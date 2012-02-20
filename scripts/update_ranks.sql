@@ -12,6 +12,7 @@ begin;
     over (partition by pe.game_type_cd order by pe.elo desc)
     from players p, player_elos pe
     where p.player_id = pe.player_id
+    and p.active_ind = 'Y'
     and pe.games > 32;
 
 end;
