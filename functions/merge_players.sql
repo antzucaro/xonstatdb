@@ -1,4 +1,4 @@
-﻿create or replace function merge_players(p_winner_player_id players.player_id%TYPE, p_loser_player_id players.player_id%TYPE) RETURNS void as
+create or replace function merge_players(p_winner_player_id players.player_id%TYPE, p_loser_player_id players.player_id%TYPE) RETURNS void as
 $$
 declare
    rowcount integer;   
