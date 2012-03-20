@@ -1,4 +1,6 @@
-﻿-- count of games for the given year
+﻿-- Yo dawg, I heard you liked stats...
+
+-- count of games for the given year
 select date_part('month', create_dt), count(*) 
 from games 
 where date_part('year', create_dt) = 2012 
