@@ -4,6 +4,8 @@ declare
    rowcount integer;
    weighted_elo record;
 begin
+   raise notice 'Merging % and %', p_winner_player_id, p_loser_player_id;
+
    -- start with weapon stats
    update player_weapon_stats
    set player_id = p_winner_player_id
@@ -29,7 +31,7 @@ begin
    -- take the weighted average of the elos and sum the games to get the new total
    FOR weighted_elo IN (select game_type_cd, elo_sum/game_count aggregate_elo, game_count
       from (
-         select game_type_cd, sum(games*elo) elo_sum, sum(games) game_count 
+         select game_type_cd, greatest(sum(games*elo),1) elo_sum, sum(games) game_count 
          from player_elos 
          where player_id in (p_winner_player_id, p_loser_player_id) 
          group by game_type_cd
