@@ -4,6 +4,7 @@ CREATE TABLE xonstat.player_elos
   game_type_cd character varying(10) NOT NULL,
   games integer NOT NULL default 0,
   elo numeric NOT NULL,
+  active_ind boolean NOT NULL default true,
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT player_elos_pk PRIMARY KEY (player_id, game_type_cd),
   CONSTRAINT player_elos_fk01 FOREIGN KEY (player_id)
