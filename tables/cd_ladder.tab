@@ -1,7 +1,7 @@
 CREATE TABLE xonstat.cd_ladder
 (
   ladder_cd serial NOT NULL,
-  title character varying(100) NOT NULL,
+  name character varying(100) NOT NULL,
   descr character varying(200) NOT NULL,
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   start_dt date NOT NULL,
