@@ -1,0 +1,24 @@
+CREATE TABLE xonstat.player_ladder_ranks
+(
+  player_ladder_rank_id serial NOT NULL,
+  player_id integer NOT NULL,
+  ladder_cd integer NOT NULL,
+  points integer NOT NULL default 0,
+  rank integer NOT NULL default 1,
+  games integer NOT NULL default 0,
+  wins integer NOT NULL default 0,
+  active_ind boolean NOT NULL default true,
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
+  CONSTRAINT player_ladder_ranks_pk PRIMARY KEY (player_ladder_rank_id),
+  CONSTRAINT player_ladder_ranks_uk01 UNIQUE (player_id, ladder_cd),
+  CONSTRAINT player_ladder_ranks_fk01 FOREIGN KEY (player_id)
+      REFERENCES xonstat.players (player_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT player_ladder_ranks_fk02 FOREIGN KEY (ladder_cd)
+      REFERENCES xonstat.cd_ladder (ladder_cd) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.player_ladder_ranks OWNER TO xonstat;
