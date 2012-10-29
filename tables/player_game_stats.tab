@@ -42,6 +42,7 @@ WITH (
 
 CREATE INDEX player_game_stats_ix01 on player_game_stats(create_dt);
 CREATE INDEX player_game_stats_ix02 on player_game_stats(game_id);
+CREATE INDEX player_game_stats_ix03 on player_game_stats(player_id);
 ALTER TABLE xonstat.player_game_stats OWNER TO xonstat;
 
 CREATE TABLE xonstat.player_game_stats_2011Q2 (
@@ -50,6 +51,7 @@ CREATE TABLE xonstat.player_game_stats_2011Q2 (
 
 CREATE INDEX player_game_stats_2011Q2_ix01 on player_game_stats_2011Q2(create_dt);
 CREATE INDEX player_game_stats_2011Q2_ix02 on player_game_stats_2011Q2(game_id);
+CREATE INDEX player_game_stats_2011Q2_ix03 on player_game_stats_2011Q2(player_id);
 ALTER TABLE xonstat.player_game_stats_2011Q2 OWNER TO xonstat;
 
 
@@ -59,6 +61,7 @@ CREATE TABLE xonstat.player_game_stats_2011Q3 (
 
 CREATE INDEX player_game_stats_2011Q3_ix01 on player_game_stats_2011Q3(create_dt);
 CREATE INDEX player_game_stats_2011Q3_ix02 on player_game_stats_2011Q3(game_id);
+CREATE INDEX player_game_stats_2011Q3_ix03 on player_game_stats_2011Q3(player_id);
 ALTER TABLE xonstat.player_game_stats_2011Q3 OWNER TO xonstat;
 
 
@@ -68,6 +71,7 @@ CREATE TABLE xonstat.player_game_stats_2011Q4 (
 
 CREATE INDEX player_game_stats_2011Q4_ix01 on player_game_stats_2011Q4(create_dt);
 CREATE INDEX player_game_stats_2011Q4_ix02 on player_game_stats_2011Q4(game_id);
+CREATE INDEX player_game_stats_2011Q4_ix03 on player_game_stats_2011Q4(player_id);
 ALTER TABLE xonstat.player_game_stats_2011Q4 OWNER TO xonstat;
 
 
@@ -77,6 +81,7 @@ CREATE TABLE xonstat.player_game_stats_2012Q1 (
 
 CREATE INDEX player_game_stats_2012Q1_ix01 on player_game_stats_2012Q1(create_dt);
 CREATE INDEX player_game_stats_2012Q1_ix02 on player_game_stats_2012Q1(game_id);
+CREATE INDEX player_game_stats_2012Q1_ix03 on player_game_stats_2012Q1(player_id);
 ALTER TABLE xonstat.player_game_stats_2012Q1 OWNER TO xonstat;
 
 
@@ -86,6 +91,7 @@ CREATE TABLE xonstat.player_game_stats_2012Q2 (
 
 CREATE INDEX player_game_stats_2012Q2_ix01 on player_game_stats_2012Q2(create_dt);
 CREATE INDEX player_game_stats_2012Q2_ix02 on player_game_stats_2012Q2(game_id);
+CREATE INDEX player_game_stats_2012Q2_ix03 on player_game_stats_2012Q2(player_id);
 ALTER TABLE xonstat.player_game_stats_2012Q2 OWNER TO xonstat;
 
 
@@ -95,6 +101,7 @@ CREATE TABLE xonstat.player_game_stats_2012Q3 (
 
 CREATE INDEX player_game_stats_2012Q3_ix01 on player_game_stats_2012Q3(create_dt);
 CREATE INDEX player_game_stats_2012Q3_ix02 on player_game_stats_2012Q3(game_id);
+CREATE INDEX player_game_stats_2012Q3_ix03 on player_game_stats_2012Q3(player_id);
 ALTER TABLE xonstat.player_game_stats_2012Q3 OWNER TO xonstat;
 
 
@@ -104,6 +111,7 @@ CREATE TABLE xonstat.player_game_stats_2012Q4 (
 
 CREATE INDEX player_game_stats_2012Q4_ix01 on player_game_stats_2012Q4(create_dt);
 CREATE INDEX player_game_stats_2012Q4_ix02 on player_game_stats_2012Q4(game_id);
+CREATE INDEX player_game_stats_2012Q4_ix03 on player_game_stats_2012Q4(player_id);
 ALTER TABLE xonstat.player_game_stats_2012Q4 OWNER TO xonstat;
 
 
@@ -113,6 +121,7 @@ CREATE TABLE xonstat.player_game_stats_2013Q1 (
 
 CREATE INDEX player_game_stats_2013Q1_ix01 on player_game_stats_2013Q1(create_dt);
 CREATE INDEX player_game_stats_2013Q1_ix02 on player_game_stats_2013Q1(game_id);
+CREATE INDEX player_game_stats_2013Q1_ix03 on player_game_stats_2013Q1(player_id);
 ALTER TABLE xonstat.player_game_stats_2013Q1 OWNER TO xonstat;
 
 
@@ -122,5 +131,5 @@ CREATE TABLE xonstat.player_game_stats_2013Q2 (
 
 CREATE INDEX player_game_stats_2013Q2_ix01 on player_game_stats_2013Q2(create_dt);
 CREATE INDEX player_game_stats_2013Q2_ix02 on player_game_stats_2013Q2(game_id);
+CREATE INDEX player_game_stats_2013Q2_ix03 on player_game_stats_2013Q2(player_id);
 ALTER TABLE xonstat.player_game_stats_2013Q2 OWNER TO xonstat;
-
