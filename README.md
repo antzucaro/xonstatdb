@@ -58,6 +58,30 @@ Now load the initial tables:
 
 And that's it!
 
+Do note that there are a few maintenance scripts that can be used
+once the database begins accumulating data. These can be found in 
+the scripts subdirectory. A summary of what they do follows:
+
+  update\_elos.sql - will decrease player elo records by one point 
+                    day for every day after 30 days of inactivity
+                    until they hit the elo "floor" of 100. This 
+                    prevents inactive players from staying on the 
+                    leaderboard/ranks for too long.
+
+  update\_ranks.sql - will populate the player\_ranks table each day
+                     according to the elo values when it is run.
+
+There is also a "merge players" function in the functions sub-
+directory. This can be used to merge two players together into one
+record in the presentation layer of XonStat. It can be run as follows:
+
+  select merge\_players(winner\_player\_id, loser\_player\_id);
+
+The "winner" player ID is the account that remains active after the
+transaction.
+
+Enjoy!
+
 [xonotic]: http://www.xonotic.org/
 [xonstat]: http://stats.xonotic.org/
 
