@@ -1,4 +1,4 @@
-begin;
+begin transaction;
     -- get rid of the existing summary stats since we're about to refresh
     delete from summary_stats;
 
@@ -26,7 +26,5 @@ begin;
     where  dm.game_type_cd = 'dm'
     and    ctf.game_type_cd = 'ctf'
     and    duel.game_type_cd = 'duel';
-
-    commit;
 
 end;
