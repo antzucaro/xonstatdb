@@ -1,0 +1,15 @@
+CREATE TABLE xonstat.summary_stats
+(
+  total_players bigint NOT NULL,
+  total_servers bigint NOT NULL,
+  total_games bigint NOT NULL,
+  total_dm_games bigint NOT NULL,
+  total_duel_games bigint NOT NULL,
+  total_ctf_games bigint NOT NULL,
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC')
+)
+WITH (
+  OIDS=FALSE
+);
+
+ALTER TABLE xonstat.summary_stats OWNER TO xonstat;
