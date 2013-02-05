@@ -8,6 +8,7 @@ CREATE TABLE xonstat.games
   duration interval,
   winner integer,
   match_id character varying(64),
+  mod character varying(64),
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT games_pk PRIMARY KEY (game_id),
   CONSTRAINT games_fk001 FOREIGN KEY (game_type_cd)
