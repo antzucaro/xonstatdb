@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists team_game_stats;
 drop table if exists summary_stats cascade;
 drop table if exists player_map_captimes;
 drop table if exists player_ladder_ranks;
@@ -47,6 +48,7 @@ drop table if exists players cascade;
 \i tables/player_ladder_ranks.tab
 \i tables/player_map_captimes.tab
 \i tables/summary_stats.tab
+\i tables/team_game_stats.tab
 
 begin;
 
@@ -188,6 +190,7 @@ insert into players (nick) values ('Untracked Player');
 \i triggers/games_ins_trg.sql
 \i triggers/player_game_stats_ins_trg.sql
 \i triggers/player_weapon_stats_ins_trg.sql
+\i triggers/team_game_stats_ins_trg.sql
 
 -- version tracking
 insert into db_version(version, descr) values('1.0.0', 'Initial build');
