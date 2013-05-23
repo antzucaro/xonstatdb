@@ -20,70 +20,8 @@ WITH (
 CREATE INDEX team_game_stats_ix01 on team_game_stats(game_id);
 ALTER TABLE xonstat.team_game_stats OWNER TO xonstat;
 
-CREATE TABLE xonstat.team_game_stats_2011Q2 (
-    CHECK ( create_dt >= DATE '2011-04-01' AND create_dt < DATE '2011-07-01' ) 
-) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2011Q2_ix01 on team_game_stats_2011Q2(game_id);
-ALTER TABLE xonstat.team_game_stats_2011Q2 OWNER TO xonstat;
-
-
-CREATE TABLE xonstat.team_game_stats_2011Q3 ( 
-    CHECK ( create_dt >= DATE '2011-07-01' AND create_dt < DATE '2011-10-01' ) 
-) INHERITS (team_game_stats);
-
-CREATE INDEX team_game_stats_2011Q3_ix01 on team_game_stats_2011Q3(game_id);
-ALTER TABLE xonstat.team_game_stats_2011Q3 OWNER TO xonstat;
-
-
-CREATE TABLE xonstat.team_game_stats_2011Q4 ( 
-    CHECK ( create_dt >= DATE '2011-10-01' AND create_dt < DATE '2012-01-01' ) 
-) INHERITS (team_game_stats);
-
-CREATE INDEX team_game_stats_2011Q4_ix01 on team_game_stats_2011Q4(game_id);
-ALTER TABLE xonstat.team_game_stats_2011Q4 OWNER TO xonstat;
-
-
-CREATE TABLE xonstat.team_game_stats_2012Q1 ( 
-    CHECK ( create_dt >= DATE '2012-01-01' AND create_dt < DATE '2012-04-01' ) 
-) INHERITS (team_game_stats);
-
-CREATE INDEX team_game_stats_2012Q1_ix01 on team_game_stats_2012Q1(game_id);
-ALTER TABLE xonstat.team_game_stats_2012Q1 OWNER TO xonstat;
-
-
-CREATE TABLE xonstat.team_game_stats_2012Q2 ( 
-    CHECK ( create_dt >= DATE '2012-04-01' AND create_dt < DATE '2012-07-01' ) 
-) INHERITS (team_game_stats);
-
-CREATE INDEX team_game_stats_2012Q2_ix01 on team_game_stats_2012Q2(game_id);
-ALTER TABLE xonstat.team_game_stats_2012Q2 OWNER TO xonstat;
-
-
-CREATE TABLE xonstat.team_game_stats_2012Q3 ( 
-    CHECK ( create_dt >= DATE '2012-07-01' AND create_dt < DATE '2012-10-01' ) 
-) INHERITS (team_game_stats);
-
-CREATE INDEX team_game_stats_2012Q3_ix01 on team_game_stats_2012Q3(game_id);
-ALTER TABLE xonstat.team_game_stats_2012Q3 OWNER TO xonstat;
-
-
-CREATE TABLE xonstat.team_game_stats_2012Q4 ( 
-    CHECK ( create_dt >= DATE '2012-10-01' AND create_dt < DATE '2013-01-01' ) 
-) INHERITS (team_game_stats);
-
-CREATE INDEX team_game_stats_2012Q4_ix01 on team_game_stats_2012Q4(game_id);
-ALTER TABLE xonstat.team_game_stats_2012Q4 OWNER TO xonstat;
-
-
-CREATE TABLE xonstat.team_game_stats_2013Q1 ( 
-    CHECK ( create_dt >= DATE '2013-01-01' AND create_dt < DATE '2013-04-01' ) 
-) INHERITS (team_game_stats);
-
-CREATE INDEX team_game_stats_2013Q1_ix01 on team_game_stats_2013Q1(game_id);
-ALTER TABLE xonstat.team_game_stats_2013Q1 OWNER TO xonstat;
-
-
+-- 2013
 CREATE TABLE xonstat.team_game_stats_2013Q2 ( 
     CHECK ( create_dt >= DATE '2013-04-01' AND create_dt < DATE '2013-07-01' ) 
 ) INHERITS (team_game_stats);
@@ -108,6 +46,7 @@ CREATE INDEX team_game_stats_2013Q4_ix01 on team_game_stats_2013Q4(game_id);
 ALTER TABLE xonstat.team_game_stats_2013Q4 OWNER TO xonstat;
 
 
+-- 2014
 CREATE TABLE xonstat.team_game_stats_2014Q1 ( 
     CHECK ( create_dt >= DATE '2014-01-01' AND create_dt < DATE '2014-04-01' ) 
 ) INHERITS (team_game_stats);
