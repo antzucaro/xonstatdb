@@ -117,7 +117,7 @@ CREATE INDEX games_2014Q3_ix001 on games_2014Q3(create_dt);
 ALTER TABLE xonstat.games_2014Q3 OWNER TO xonstat;
 
 CREATE TABLE xonstat.games_2014Q4 ( 
-    CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2014-01-01' ) 
+    CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2015-01-01' ) 
 ) INHERITS (games);
 CREATE INDEX games_2014Q4_ix001 on games_2014Q4(create_dt);
 ALTER TABLE xonstat.games_2014Q4 OWNER TO xonstat;

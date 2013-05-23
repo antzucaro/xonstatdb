@@ -16,7 +16,7 @@ BEGIN
         INSERT INTO team_game_stats_2014Q2 VALUES (NEW.*);
     ELSIF (NEW.create_dt >= DATE '2014-07-01' AND NEW.create_dt < DATE '2014-10-01') THEN
         INSERT INTO team_game_stats_2014Q3 VALUES (NEW.*);
-    ELSIF (NEW.create_dt >= DATE '2014-10-01' AND NEW.create_dt < DATE '2015-10-01') THEN
+    ELSIF (NEW.create_dt >= DATE '2014-10-01' AND NEW.create_dt < DATE '2015-01-01') THEN
         INSERT INTO team_game_stats_2014Q4 VALUES (NEW.*);
 
     ELSE
