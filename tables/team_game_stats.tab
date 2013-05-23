@@ -4,6 +4,8 @@ CREATE TABLE xonstat.team_game_stats
   game_id bigint NOT NULL,
   team integer NOT NULL,
   score integer,
+  rounds integer,
+  caps integer,
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT team_game_stats_pk PRIMARY KEY (team_game_stat_id),
   CONSTRAINT team_game_stats_uk001 UNIQUE (game_id, team),
