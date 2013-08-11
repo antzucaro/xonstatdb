@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# user doing the load - must be superuser, and must have access to postgres db
+USER=xonstat
+
+# full path to the backup file
+BACKUPFILE=$1
+
+psql -U $USER -h localhost postgres <<EOF
+drop database xonstatdb;
+create database xonstatdb encoding='utf-8' owner=xonstat;
+\q
+EOF
+
+pg_restore -c -U xonstat -h localhost -d xonstatdb $BACKUPFILE
