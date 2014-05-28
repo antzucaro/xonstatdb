@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists player_game_anticheats;
 drop table if exists team_game_stats;
 drop table if exists summary_stats cascade;
 drop table if exists player_map_captimes;
@@ -49,6 +50,7 @@ drop table if exists players cascade;
 \i tables/player_map_captimes.tab
 \i tables/summary_stats.tab
 \i tables/team_game_stats.tab
+\i tables/player_game_anticheats.tab
 
 begin;
 

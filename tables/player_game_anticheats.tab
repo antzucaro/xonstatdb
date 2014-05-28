@@ -1,0 +1,20 @@
+CREATE TABLE xonstat.player_game_anticheats
+(
+  player_game_anticheat_id bigserial NOT NULL,
+  player_id integer NOT NULL,
+  game_id bigint NOT NULL,
+  key character varying(128),
+  value numeric,
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
+  CONSTRAINT player_game_anticheats_pk PRIMARY KEY (player_game_anticheat_id),
+  CONSTRAINT player_game_anticheats_fk01 FOREIGN KEY (player_id)
+      REFERENCES players (player_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+
+CREATE INDEX player_game_anticheats_ix01 on player_game_anticheats(game_id);
+CREATE INDEX player_game_anticheats_ix02 on player_game_anticheats(player_id);
+ALTER TABLE xonstat.player_game_anticheats OWNER TO xonstat;
