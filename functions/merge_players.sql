@@ -2,7 +2,7 @@ create or replace function merge_players(p_winner_player_id players.player_id%TY
 $$
 declare
    rowcount integer;
-   weighted_elo record;
+   r record;
 begin
    raise notice 'Merging % and %', p_winner_player_id, p_loser_player_id;
 
@@ -28,35 +28,24 @@ begin
    where player_id = p_loser_player_id
    and not exists (select 1 from xonstat.player_elos where player_id = p_winner_player_id and game_type_cd = pe.game_type_cd);
 
-   -- take the weighted average of the elos and sum the games to get the new total
-   FOR weighted_elo IN (select game_type_cd, elo_sum/game_count aggregate_elo, game_count
-      from (
-         select game_type_cd, sum(greatest(games, 1)*elo) elo_sum, greatest(sum(games),1) game_count 
-         from player_elos 
-         where player_id in (p_winner_player_id, p_loser_player_id) 
-         group by game_type_cd
-      ) es)
+   -- Take the aggregate # of games and the *greatest* Elo 
+   -- value and use that going forward
+   FOR r in (
+     select game_type_cd, sum(games) sum_games, 
+     max(elo) max_elo, max(update_dt) max_update_dt
+     from player_elos
+     where player_id in (p_winner_player_id, p_loser_player_id) 
+     group by game_type_cd
+   )
    LOOP
       update xonstat.player_elos
-      set elo = weighted_elo.aggregate_elo, games = weighted_elo.game_count
+      set elo = r.max_elo, games = r.sum_games, update_dt = r.max_update_dt
       where player_id = p_winner_player_id
-      and game_type_cd = weighted_elo.game_type_cd;
+      and game_type_cd = r.game_type_cd
+      and games != r.sum_games;
 
-      raise notice 'New % Elo is %.', weighted_elo.game_type_cd, weighted_elo.aggregate_elo;
+      raise notice 'New % Elo is %.', r.game_type_cd, r.max_elo;
    END LOOP;
-
-   -- update the existing player_elos entries that have a higher elo on the loser
-   -- update xonstat.player_elos pe
-   -- set elo = newpe.elo
-   -- from
-      -- (select lpe.game_type_cd, lpe.elo
-      -- from xonstat.player_elos wpe, xonstat.player_elos lpe
-      -- where wpe.game_type_cd = lpe.game_type_cd
-      -- and wpe.player_id = 67
-      -- and lpe.player_id = 720
-      -- and lpe.elo > wpe.elo) newpe
-   -- where player_id = 67
-   -- and pe.game_type_cd = newpe.game_type_cd;
 
    -- then hashkeys (winner takes the loser's hashkey)
    update hashkeys
