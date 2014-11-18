@@ -4,6 +4,31 @@ table=$1
 start_year=$2
 end_year=$3
 
+for year in `seq $start_year $end_year`
+do
+    for qtr in "q1" "q2" "q3" "q4"
+    do
+        printf "CREATE TABLE IF NOT EXISTS xonstat.%s_%s%s ( \n" $table $year $qtr
+        if [[ $qtr = "q1" ]]
+        then
+            printf "\tCHECK ( create_dt >= DATE '%s-01-01' AND create_dt < DATE '%s-04-01' ) \n" $year $year
+        elif [[ $qtr = "q2" ]]
+        then
+            printf "\tCHECK ( create_dt >= DATE '%s-04-01' AND create_dt < DATE '%s-07-01' ) \n" $year $year
+        elif [[ $qtr = "q3" ]]
+        then
+            printf "\tCHECK ( create_dt >= DATE '%s-07-01' AND create_dt < DATE '%s-10-01' ) \n" $year $year
+        elif [[ $qtr = "q4" ]]
+        then
+            next_year=$[year + 1]
+            printf "\tCHECK ( create_dt >= DATE '%s-10-01' AND create_dt < DATE '%s-01-01' ) \n" $year $next_year
+        fi
+
+        printf ") INHERITS (%s);\n\n" $table
+    done
+done
+printf "\n"
+
 printf "CREATE OR REPLACE FUNCTION %s_ins()\n" $table
 printf "RETURNS TRIGGER AS \$\$\n"
 printf "BEGIN\n"
