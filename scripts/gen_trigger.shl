@@ -32,8 +32,15 @@ do
 done
 
 printf "\tELSE\n"
-printf "\t\tRAISE EXCEPTION 'Date out of range. Fix the %s_ins() trigger!\n" $table
-printf "\tEND IF\n"
+printf "\t\tRAISE EXCEPTION 'Date out of range. Fix the %s_ins() trigger!';\n" $table
+printf "\tEND IF;\n"
 printf "\tRETURN NULL;\n"
 
 printf "END\n"
+printf "\$\$\n"
+printf "LANGUAGE plpgsql;\n\n"
+
+printf "DROP TRIGGER IF EXISTS %s_ins_trg ON xonstat.games;\n" $table
+printf "CREATE TRIGGER %s_ins_trg\n" $table
+printf "BEFORE INSERT on xonstat.%s\n" $table
+printf "FOR EACH ROW EXECUTE PROCEDURE %s_ins();\n" $table
