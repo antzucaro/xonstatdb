@@ -1,0 +1,39 @@
+#!/bin/bash
+
+table=$1
+start_year=$2
+end_year=$3
+
+printf "CREATE OR REPLACE FUNCTION %s_ins()\n" $table
+printf "RETURNS TRIGGER AS \$\$\n"
+printf "BEGIN\n"
+
+for i in `seq $start_year $end_year`
+do
+
+    if [[ start_year -eq i ]]
+    then
+        printf "\tIF (NEW.create_dt >= DATE '%s-01-01' AND NEW.create_dt < DATE '%s-04-01') THEN\n" $i $i
+    else
+        printf "\tELSIF (NEW.create_dt >= DATE '%s-01-01' AND NEW.create_dt < DATE '%s-04-01') THEN\n" $i $i
+    fi
+    printf "\t\tINSERT INTO %s_%sQ1 VALUES (NEW.*);\n" $table $i
+
+    printf "\tELSIF (NEW.create_dt >= DATE '%s-04-01' AND NEW.create_dt < DATE '%s-07-01') THEN\n" $i $i
+    printf "\t\tINSERT INTO %s_%sQ2 VALUES (NEW.*);\n" $table $i
+
+    printf "\tELSIF (NEW.create_dt >= DATE '%s-07-01' AND NEW.create_dt < DATE '%s-10-01') THEN\n" $i $i
+    printf "\t\tINSERT INTO %s_%sQ3 VALUES (NEW.*);\n" $table $i
+
+    next_year=$[i + 1]
+    printf "\tELSIF (NEW.create_dt >= DATE '%s-10-01' AND NEW.create_dt < DATE '%s-01-01') THEN\n" $i $next_year
+    printf "\t\tINSERT INTO %s_%sQ4 VALUES (NEW.*);\n" $table $i
+
+done
+
+printf "\tELSE\n"
+printf "\t\tRAISE EXCEPTION 'Date out of range. Fix the %s_ins() trigger!\n" $table
+printf "\tEND IF\n"
+printf "\tRETURN NULL;\n"
+
+printf "END\n"
