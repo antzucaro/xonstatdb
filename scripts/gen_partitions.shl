@@ -25,6 +25,17 @@ do
         fi
 
         printf ") INHERITS (%s);\n\n" $table
+
+        # indexes
+        printf "CREATE INDEX %s_%s%s_ix001 on %s_%s%s(create_dt);\n" $table $year $qtr $table $year $qtr
+
+        # conditional indexes that depend on the table
+        if [[ $table = "player_game_stats" || $table = "player_weapon_stats" ]]
+        then
+            printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
+            printf "CREATE INDEX %s_%s%s_ix003 on %s_%s%s(player_id);\n" $table $year $qtr $table $year $qtr
+        fi
+        printf "\n"
     done
 done
 printf "\n"
@@ -65,7 +76,7 @@ printf "END\n"
 printf "\$\$\n"
 printf "LANGUAGE plpgsql;\n\n"
 
-printf "DROP TRIGGER IF EXISTS %s_ins_trg ON xonstat.games;\n" $table
+printf "DROP TRIGGER IF EXISTS %s_ins_trg ON xonstat.%s;\n" $table $table
 printf "CREATE TRIGGER %s_ins_trg\n" $table
 printf "BEFORE INSERT on xonstat.%s\n" $table
 printf "FOR EACH ROW EXECUTE PROCEDURE %s_ins();\n" $table
