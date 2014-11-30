@@ -35,6 +35,11 @@ do
             printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
             printf "CREATE INDEX %s_%s%s_ix003 on %s_%s%s(player_id);\n" $table $year $qtr $table $year $qtr
         fi
+
+        if [[ $table = "team_game_stats" ]]
+        then
+            printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
+        fi
         printf "\n"
     done
 done
