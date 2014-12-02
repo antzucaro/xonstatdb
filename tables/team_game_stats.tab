@@ -20,60 +20,198 @@ WITH (
 CREATE INDEX team_game_stats_ix01 on team_game_stats(game_id);
 ALTER TABLE xonstat.team_game_stats OWNER TO xonstat;
 
-
--- 2013
-CREATE TABLE xonstat.team_game_stats_2013Q2 ( 
-    CHECK ( create_dt >= DATE '2013-04-01' AND create_dt < DATE '2013-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2014q1 ( 
+	CHECK ( create_dt >= DATE '2014-01-01' AND create_dt < DATE '2014-04-01' ) 
 ) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2013Q2_ix01 on team_game_stats_2013Q2(game_id);
-ALTER TABLE xonstat.team_game_stats_2013Q2 OWNER TO xonstat;
+CREATE INDEX team_game_stats_2014q1_ix001 on team_game_stats_2014q1(create_dt);
+CREATE INDEX team_game_stats_2014q1_ix002 on team_game_stats_2014q1(game_id);
 
-
-CREATE TABLE xonstat.team_game_stats_2013Q3 ( 
-    CHECK ( create_dt >= DATE '2013-07-01' AND create_dt < DATE '2013-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2014q2 ( 
+	CHECK ( create_dt >= DATE '2014-04-01' AND create_dt < DATE '2014-07-01' ) 
 ) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2013Q3_ix01 on team_game_stats_2013Q3(game_id);
-ALTER TABLE xonstat.team_game_stats_2013Q3 OWNER TO xonstat;
+CREATE INDEX team_game_stats_2014q2_ix001 on team_game_stats_2014q2(create_dt);
+CREATE INDEX team_game_stats_2014q2_ix002 on team_game_stats_2014q2(game_id);
 
-
-CREATE TABLE xonstat.team_game_stats_2013Q4 ( 
-    CHECK ( create_dt >= DATE '2013-10-01' AND create_dt < DATE '2014-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2014q3 ( 
+	CHECK ( create_dt >= DATE '2014-07-01' AND create_dt < DATE '2014-10-01' ) 
 ) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2013Q4_ix01 on team_game_stats_2013Q4(game_id);
-ALTER TABLE xonstat.team_game_stats_2013Q4 OWNER TO xonstat;
+CREATE INDEX team_game_stats_2014q3_ix001 on team_game_stats_2014q3(create_dt);
+CREATE INDEX team_game_stats_2014q3_ix002 on team_game_stats_2014q3(game_id);
 
-
--- 2014
-CREATE TABLE xonstat.team_game_stats_2014Q1 ( 
-    CHECK ( create_dt >= DATE '2014-01-01' AND create_dt < DATE '2014-04-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2014q4 ( 
+	CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2015-01-01' ) 
 ) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2014Q1_ix01 on team_game_stats_2014Q1(game_id);
-ALTER TABLE xonstat.team_game_stats_2014Q1 OWNER TO xonstat;
+CREATE INDEX team_game_stats_2014q4_ix001 on team_game_stats_2014q4(create_dt);
+CREATE INDEX team_game_stats_2014q4_ix002 on team_game_stats_2014q4(game_id);
 
-
-CREATE TABLE xonstat.team_game_stats_2014Q2 ( 
-    CHECK ( create_dt >= DATE '2014-04-01' AND create_dt < DATE '2014-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2015q1 ( 
+	CHECK ( create_dt >= DATE '2015-01-01' AND create_dt < DATE '2015-04-01' ) 
 ) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2014Q2_ix01 on team_game_stats_2014Q2(game_id);
-ALTER TABLE xonstat.team_game_stats_2014Q2 OWNER TO xonstat;
+CREATE INDEX team_game_stats_2015q1_ix001 on team_game_stats_2015q1(create_dt);
+CREATE INDEX team_game_stats_2015q1_ix002 on team_game_stats_2015q1(game_id);
 
-
-CREATE TABLE xonstat.team_game_stats_2014Q3 ( 
-    CHECK ( create_dt >= DATE '2014-07-01' AND create_dt < DATE '2014-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2015q2 ( 
+	CHECK ( create_dt >= DATE '2015-04-01' AND create_dt < DATE '2015-07-01' ) 
 ) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2014Q3_ix01 on team_game_stats_2014Q3(game_id);
-ALTER TABLE xonstat.team_game_stats_2014Q3 OWNER TO xonstat;
+CREATE INDEX team_game_stats_2015q2_ix001 on team_game_stats_2015q2(create_dt);
+CREATE INDEX team_game_stats_2015q2_ix002 on team_game_stats_2015q2(game_id);
 
-
-CREATE TABLE xonstat.team_game_stats_2014Q4 ( 
-    CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2015-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2015q3 ( 
+	CHECK ( create_dt >= DATE '2015-07-01' AND create_dt < DATE '2015-10-01' ) 
 ) INHERITS (team_game_stats);
 
-CREATE INDEX team_game_stats_2014Q4_ix01 on team_game_stats_2014Q4(game_id);
-ALTER TABLE xonstat.team_game_stats_2014Q4 OWNER TO xonstat;
+CREATE INDEX team_game_stats_2015q3_ix001 on team_game_stats_2015q3(create_dt);
+CREATE INDEX team_game_stats_2015q3_ix002 on team_game_stats_2015q3(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2015q4 ( 
+	CHECK ( create_dt >= DATE '2015-10-01' AND create_dt < DATE '2016-01-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2015q4_ix001 on team_game_stats_2015q4(create_dt);
+CREATE INDEX team_game_stats_2015q4_ix002 on team_game_stats_2015q4(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2016q1 ( 
+	CHECK ( create_dt >= DATE '2016-01-01' AND create_dt < DATE '2016-04-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2016q1_ix001 on team_game_stats_2016q1(create_dt);
+CREATE INDEX team_game_stats_2016q1_ix002 on team_game_stats_2016q1(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2016q2 ( 
+	CHECK ( create_dt >= DATE '2016-04-01' AND create_dt < DATE '2016-07-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2016q2_ix001 on team_game_stats_2016q2(create_dt);
+CREATE INDEX team_game_stats_2016q2_ix002 on team_game_stats_2016q2(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2016q3 ( 
+	CHECK ( create_dt >= DATE '2016-07-01' AND create_dt < DATE '2016-10-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2016q3_ix001 on team_game_stats_2016q3(create_dt);
+CREATE INDEX team_game_stats_2016q3_ix002 on team_game_stats_2016q3(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2016q4 ( 
+	CHECK ( create_dt >= DATE '2016-10-01' AND create_dt < DATE '2017-01-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2016q4_ix001 on team_game_stats_2016q4(create_dt);
+CREATE INDEX team_game_stats_2016q4_ix002 on team_game_stats_2016q4(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2017q1 ( 
+	CHECK ( create_dt >= DATE '2017-01-01' AND create_dt < DATE '2017-04-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2017q1_ix001 on team_game_stats_2017q1(create_dt);
+CREATE INDEX team_game_stats_2017q1_ix002 on team_game_stats_2017q1(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2017q2 ( 
+	CHECK ( create_dt >= DATE '2017-04-01' AND create_dt < DATE '2017-07-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2017q2_ix001 on team_game_stats_2017q2(create_dt);
+CREATE INDEX team_game_stats_2017q2_ix002 on team_game_stats_2017q2(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2017q3 ( 
+	CHECK ( create_dt >= DATE '2017-07-01' AND create_dt < DATE '2017-10-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2017q3_ix001 on team_game_stats_2017q3(create_dt);
+CREATE INDEX team_game_stats_2017q3_ix002 on team_game_stats_2017q3(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2017q4 ( 
+	CHECK ( create_dt >= DATE '2017-10-01' AND create_dt < DATE '2018-01-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2017q4_ix001 on team_game_stats_2017q4(create_dt);
+CREATE INDEX team_game_stats_2017q4_ix002 on team_game_stats_2017q4(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2018q1 ( 
+	CHECK ( create_dt >= DATE '2018-01-01' AND create_dt < DATE '2018-04-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2018q1_ix001 on team_game_stats_2018q1(create_dt);
+CREATE INDEX team_game_stats_2018q1_ix002 on team_game_stats_2018q1(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2018q2 ( 
+	CHECK ( create_dt >= DATE '2018-04-01' AND create_dt < DATE '2018-07-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2018q2_ix001 on team_game_stats_2018q2(create_dt);
+CREATE INDEX team_game_stats_2018q2_ix002 on team_game_stats_2018q2(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2018q3 ( 
+	CHECK ( create_dt >= DATE '2018-07-01' AND create_dt < DATE '2018-10-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2018q3_ix001 on team_game_stats_2018q3(create_dt);
+CREATE INDEX team_game_stats_2018q3_ix002 on team_game_stats_2018q3(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2018q4 ( 
+	CHECK ( create_dt >= DATE '2018-10-01' AND create_dt < DATE '2019-01-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2018q4_ix001 on team_game_stats_2018q4(create_dt);
+CREATE INDEX team_game_stats_2018q4_ix002 on team_game_stats_2018q4(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2019q1 ( 
+	CHECK ( create_dt >= DATE '2019-01-01' AND create_dt < DATE '2019-04-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2019q1_ix001 on team_game_stats_2019q1(create_dt);
+CREATE INDEX team_game_stats_2019q1_ix002 on team_game_stats_2019q1(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2019q2 ( 
+	CHECK ( create_dt >= DATE '2019-04-01' AND create_dt < DATE '2019-07-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2019q2_ix001 on team_game_stats_2019q2(create_dt);
+CREATE INDEX team_game_stats_2019q2_ix002 on team_game_stats_2019q2(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2019q3 ( 
+	CHECK ( create_dt >= DATE '2019-07-01' AND create_dt < DATE '2019-10-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2019q3_ix001 on team_game_stats_2019q3(create_dt);
+CREATE INDEX team_game_stats_2019q3_ix002 on team_game_stats_2019q3(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2019q4 ( 
+	CHECK ( create_dt >= DATE '2019-10-01' AND create_dt < DATE '2020-01-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2019q4_ix001 on team_game_stats_2019q4(create_dt);
+CREATE INDEX team_game_stats_2019q4_ix002 on team_game_stats_2019q4(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2020q1 ( 
+	CHECK ( create_dt >= DATE '2020-01-01' AND create_dt < DATE '2020-04-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2020q1_ix001 on team_game_stats_2020q1(create_dt);
+CREATE INDEX team_game_stats_2020q1_ix002 on team_game_stats_2020q1(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2020q2 ( 
+	CHECK ( create_dt >= DATE '2020-04-01' AND create_dt < DATE '2020-07-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2020q2_ix001 on team_game_stats_2020q2(create_dt);
+CREATE INDEX team_game_stats_2020q2_ix002 on team_game_stats_2020q2(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2020q3 ( 
+	CHECK ( create_dt >= DATE '2020-07-01' AND create_dt < DATE '2020-10-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2020q3_ix001 on team_game_stats_2020q3(create_dt);
+CREATE INDEX team_game_stats_2020q3_ix002 on team_game_stats_2020q3(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.team_game_stats_2020q4 ( 
+	CHECK ( create_dt >= DATE '2020-10-01' AND create_dt < DATE '2021-01-01' ) 
+) INHERITS (team_game_stats);
+
+CREATE INDEX team_game_stats_2020q4_ix001 on team_game_stats_2020q4(create_dt);
+CREATE INDEX team_game_stats_2020q4_ix002 on team_game_stats_2020q4(game_id);

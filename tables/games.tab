@@ -28,96 +28,115 @@ WITH (
 CREATE INDEX games_ix001 on games(create_dt);
 ALTER TABLE xonstat.games OWNER TO xonstat;
 
--- 2011
-CREATE TABLE xonstat.games_2011Q2 (
-    CHECK ( create_dt >= DATE '2011-04-01' AND create_dt < DATE '2011-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2014q1 ( 
+	CHECK ( create_dt >= DATE '2014-01-01' AND create_dt < DATE '2014-04-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2011Q2_ix001 on games_2011Q2(create_dt);
-ALTER TABLE xonstat.games_2011Q2 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2011Q3 ( 
-    CHECK ( create_dt >= DATE '2011-07-01' AND create_dt < DATE '2011-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2014q2 ( 
+	CHECK ( create_dt >= DATE '2014-04-01' AND create_dt < DATE '2014-07-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2011Q3_ix001 on games_2011Q3(create_dt);
-ALTER TABLE xonstat.games_2011Q3 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2011Q4 ( 
-    CHECK ( create_dt >= DATE '2011-10-01' AND create_dt < DATE '2012-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2014q3 ( 
+	CHECK ( create_dt >= DATE '2014-07-01' AND create_dt < DATE '2014-10-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2011Q4_ix001 on games_2011Q4(create_dt);
-ALTER TABLE xonstat.games_2011Q4 OWNER TO xonstat;
 
--- 2012
-CREATE TABLE xonstat.games_2012Q1 ( 
-    CHECK ( create_dt >= DATE '2012-01-01' AND create_dt < DATE '2012-04-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2014q4 ( 
+	CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2015-01-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2012Q1_ix001 on games_2012Q1(create_dt);
-ALTER TABLE xonstat.games_2012Q1 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2012Q2 ( 
-    CHECK ( create_dt >= DATE '2012-04-01' AND create_dt < DATE '2012-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2015q1 ( 
+	CHECK ( create_dt >= DATE '2015-01-01' AND create_dt < DATE '2015-04-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2012Q2_ix001 on games_2012Q2(create_dt);
-ALTER TABLE xonstat.games_2012Q2 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2012Q3 ( 
-    CHECK ( create_dt >= DATE '2012-07-01' AND create_dt < DATE '2012-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2015q2 ( 
+	CHECK ( create_dt >= DATE '2015-04-01' AND create_dt < DATE '2015-07-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2012Q3_ix001 on games_2012Q3(create_dt);
-ALTER TABLE xonstat.games_2012Q3 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2012Q4 ( 
-    CHECK ( create_dt >= DATE '2012-10-01' AND create_dt < DATE '2013-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2015q3 ( 
+	CHECK ( create_dt >= DATE '2015-07-01' AND create_dt < DATE '2015-10-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2012Q4_ix001 on games_2012Q4(create_dt);
-ALTER TABLE xonstat.games_2012Q4 OWNER TO xonstat;
 
--- 2013
-CREATE TABLE xonstat.games_2013Q1 ( 
-    CHECK ( create_dt >= DATE '2013-01-01' AND create_dt < DATE '2013-04-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2015q4 ( 
+	CHECK ( create_dt >= DATE '2015-10-01' AND create_dt < DATE '2016-01-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2013Q1_ix001 on games_2013Q1(create_dt);
-ALTER TABLE xonstat.games_2013Q1 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2013Q2 ( 
-    CHECK ( create_dt >= DATE '2013-04-01' AND create_dt < DATE '2013-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2016q1 ( 
+	CHECK ( create_dt >= DATE '2016-01-01' AND create_dt < DATE '2016-04-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2013Q2_ix001 on games_2013Q2(create_dt);
-ALTER TABLE xonstat.games_2013Q2 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2013Q3 ( 
-    CHECK ( create_dt >= DATE '2013-07-01' AND create_dt < DATE '2013-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2016q2 ( 
+	CHECK ( create_dt >= DATE '2016-04-01' AND create_dt < DATE '2016-07-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2013Q3_ix001 on games_2013Q3(create_dt);
-ALTER TABLE xonstat.games_2013Q3 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2013Q4 ( 
-    CHECK ( create_dt >= DATE '2013-10-01' AND create_dt < DATE '2014-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2016q3 ( 
+	CHECK ( create_dt >= DATE '2016-07-01' AND create_dt < DATE '2016-10-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2013Q4_ix001 on games_2013Q4(create_dt);
-ALTER TABLE xonstat.games_2013Q4 OWNER TO xonstat;
 
--- 2014
-CREATE TABLE xonstat.games_2014Q1 ( 
-    CHECK ( create_dt >= DATE '2014-01-01' AND create_dt < DATE '2014-04-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2016q4 ( 
+	CHECK ( create_dt >= DATE '2016-10-01' AND create_dt < DATE '2017-01-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2014Q1_ix001 on games_2014Q1(create_dt);
-ALTER TABLE xonstat.games_2014Q1 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2014Q2 ( 
-    CHECK ( create_dt >= DATE '2014-04-01' AND create_dt < DATE '2014-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2017q1 ( 
+	CHECK ( create_dt >= DATE '2017-01-01' AND create_dt < DATE '2017-04-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2014Q2_ix001 on games_2014Q2(create_dt);
-ALTER TABLE xonstat.games_2014Q2 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2014Q3 ( 
-    CHECK ( create_dt >= DATE '2014-07-01' AND create_dt < DATE '2014-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2017q2 ( 
+	CHECK ( create_dt >= DATE '2017-04-01' AND create_dt < DATE '2017-07-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2014Q3_ix001 on games_2014Q3(create_dt);
-ALTER TABLE xonstat.games_2014Q3 OWNER TO xonstat;
 
-CREATE TABLE xonstat.games_2014Q4 ( 
-    CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2015-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.games_2017q3 ( 
+	CHECK ( create_dt >= DATE '2017-07-01' AND create_dt < DATE '2017-10-01' ) 
 ) INHERITS (games);
-CREATE INDEX games_2014Q4_ix001 on games_2014Q4(create_dt);
-ALTER TABLE xonstat.games_2014Q4 OWNER TO xonstat;
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2017q4 ( 
+	CHECK ( create_dt >= DATE '2017-10-01' AND create_dt < DATE '2018-01-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2018q1 ( 
+	CHECK ( create_dt >= DATE '2018-01-01' AND create_dt < DATE '2018-04-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2018q2 ( 
+	CHECK ( create_dt >= DATE '2018-04-01' AND create_dt < DATE '2018-07-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2018q3 ( 
+	CHECK ( create_dt >= DATE '2018-07-01' AND create_dt < DATE '2018-10-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2018q4 ( 
+	CHECK ( create_dt >= DATE '2018-10-01' AND create_dt < DATE '2019-01-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2019q1 ( 
+	CHECK ( create_dt >= DATE '2019-01-01' AND create_dt < DATE '2019-04-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2019q2 ( 
+	CHECK ( create_dt >= DATE '2019-04-01' AND create_dt < DATE '2019-07-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2019q3 ( 
+	CHECK ( create_dt >= DATE '2019-07-01' AND create_dt < DATE '2019-10-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2019q4 ( 
+	CHECK ( create_dt >= DATE '2019-10-01' AND create_dt < DATE '2020-01-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2020q1 ( 
+	CHECK ( create_dt >= DATE '2020-01-01' AND create_dt < DATE '2020-04-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2020q2 ( 
+	CHECK ( create_dt >= DATE '2020-04-01' AND create_dt < DATE '2020-07-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2020q3 ( 
+	CHECK ( create_dt >= DATE '2020-07-01' AND create_dt < DATE '2020-10-01' ) 
+) INHERITS (games);
+
+CREATE TABLE IF NOT EXISTS xonstat.games_2020q4 ( 
+	CHECK ( create_dt >= DATE '2020-10-01' AND create_dt < DATE '2021-01-01' ) 
+) INHERITS (games);
+

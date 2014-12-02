@@ -35,141 +35,226 @@ CREATE INDEX player_weap_stats_ix03 on player_weapon_stats(player_id);
 
 ALTER TABLE xonstat.player_weapon_stats OWNER TO xonstat;
 
--- 2011
-CREATE TABLE xonstat.player_weapon_stats_2011Q2 (
-    CHECK ( create_dt >= DATE '2011-04-01' AND create_dt < DATE '2011-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2014q1 ( 
+	CHECK ( create_dt >= DATE '2014-01-01' AND create_dt < DATE '2014-04-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2011Q2_ix01 on player_weapon_stats_2011Q2(create_dt);
-CREATE INDEX player_weap_stats_2011Q2_ix02 on player_weapon_stats_2011Q2(game_id);
-CREATE INDEX player_weap_stats_2011Q2_ix03 on player_weapon_stats_2011Q2(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2011Q2 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2014q1_ix001 on player_weapon_stats_2014q1(create_dt);
+CREATE INDEX player_weapon_stats_2014q1_ix002 on player_weapon_stats_2014q1(game_id);
+CREATE INDEX player_weapon_stats_2014q1_ix003 on player_weapon_stats_2014q1(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2011Q3 ( 
-    CHECK ( create_dt >= DATE '2011-07-01' AND create_dt < DATE '2011-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2014q2 ( 
+	CHECK ( create_dt >= DATE '2014-04-01' AND create_dt < DATE '2014-07-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2011Q3_ix01 on player_weapon_stats_2011Q3(create_dt);
-CREATE INDEX player_weap_stats_2011Q3_ix02 on player_weapon_stats_2011Q3(game_id);
-CREATE INDEX player_weap_stats_2011Q3_ix03 on player_weapon_stats_2011Q3(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2011Q3 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2014q2_ix001 on player_weapon_stats_2014q2(create_dt);
+CREATE INDEX player_weapon_stats_2014q2_ix002 on player_weapon_stats_2014q2(game_id);
+CREATE INDEX player_weapon_stats_2014q2_ix003 on player_weapon_stats_2014q2(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2011Q4 ( 
-    CHECK ( create_dt >= DATE '2011-10-01' AND create_dt < DATE '2012-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2014q3 ( 
+	CHECK ( create_dt >= DATE '2014-07-01' AND create_dt < DATE '2014-10-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2011Q4_ix01 on player_weapon_stats_2011Q4(create_dt);
-CREATE INDEX player_weap_stats_2011Q4_ix02 on player_weapon_stats_2011Q4(game_id);
-CREATE INDEX player_weap_stats_2011Q4_ix03 on player_weapon_stats_2011Q4(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2011Q4 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2014q3_ix001 on player_weapon_stats_2014q3(create_dt);
+CREATE INDEX player_weapon_stats_2014q3_ix002 on player_weapon_stats_2014q3(game_id);
+CREATE INDEX player_weapon_stats_2014q3_ix003 on player_weapon_stats_2014q3(player_id);
 
--- 2012
-CREATE TABLE xonstat.player_weapon_stats_2012Q1 ( 
-    CHECK ( create_dt >= DATE '2012-01-01' AND create_dt < DATE '2012-04-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2014q4 ( 
+	CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2015-01-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2012Q1_ix01 on player_weapon_stats_2012Q1(create_dt);
-CREATE INDEX player_weap_stats_2012Q1_ix02 on player_weapon_stats_2012Q1(game_id);
-CREATE INDEX player_weap_stats_2012Q1_ix03 on player_weapon_stats_2012Q1(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2012Q1 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2014q4_ix001 on player_weapon_stats_2014q4(create_dt);
+CREATE INDEX player_weapon_stats_2014q4_ix002 on player_weapon_stats_2014q4(game_id);
+CREATE INDEX player_weapon_stats_2014q4_ix003 on player_weapon_stats_2014q4(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2012Q2 ( 
-    CHECK ( create_dt >= DATE '2012-04-01' AND create_dt < DATE '2012-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2015q1 ( 
+	CHECK ( create_dt >= DATE '2015-01-01' AND create_dt < DATE '2015-04-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2012Q2_ix01 on player_weapon_stats_2012Q2(create_dt);
-CREATE INDEX player_weap_stats_2012Q2_ix02 on player_weapon_stats_2012Q2(game_id);
-CREATE INDEX player_weap_stats_2012Q2_ix03 on player_weapon_stats_2012Q2(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2012Q2 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2015q1_ix001 on player_weapon_stats_2015q1(create_dt);
+CREATE INDEX player_weapon_stats_2015q1_ix002 on player_weapon_stats_2015q1(game_id);
+CREATE INDEX player_weapon_stats_2015q1_ix003 on player_weapon_stats_2015q1(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2012Q3 ( 
-    CHECK ( create_dt >= DATE '2012-07-01' AND create_dt < DATE '2012-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2015q2 ( 
+	CHECK ( create_dt >= DATE '2015-04-01' AND create_dt < DATE '2015-07-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2012Q3_ix01 on player_weapon_stats_2012Q3(create_dt);
-CREATE INDEX player_weap_stats_2012Q3_ix02 on player_weapon_stats_2012Q3(game_id);
-CREATE INDEX player_weap_stats_2012Q3_ix03 on player_weapon_stats_2012Q3(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2012Q3 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2015q2_ix001 on player_weapon_stats_2015q2(create_dt);
+CREATE INDEX player_weapon_stats_2015q2_ix002 on player_weapon_stats_2015q2(game_id);
+CREATE INDEX player_weapon_stats_2015q2_ix003 on player_weapon_stats_2015q2(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2012Q4 ( 
-    CHECK ( create_dt >= DATE '2012-10-01' AND create_dt < DATE '2013-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2015q3 ( 
+	CHECK ( create_dt >= DATE '2015-07-01' AND create_dt < DATE '2015-10-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2012Q4_ix01 on player_weapon_stats_2012Q4(create_dt);
-CREATE INDEX player_weap_stats_2012Q4_ix02 on player_weapon_stats_2012Q4(game_id);
-CREATE INDEX player_weap_stats_2012Q4_ix03 on player_weapon_stats_2012Q4(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2012Q4 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2015q3_ix001 on player_weapon_stats_2015q3(create_dt);
+CREATE INDEX player_weapon_stats_2015q3_ix002 on player_weapon_stats_2015q3(game_id);
+CREATE INDEX player_weapon_stats_2015q3_ix003 on player_weapon_stats_2015q3(player_id);
 
--- 2013
-CREATE TABLE xonstat.player_weapon_stats_2013Q1 ( 
-    CHECK ( create_dt >= DATE '2013-01-01' AND create_dt < DATE '2013-04-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2015q4 ( 
+	CHECK ( create_dt >= DATE '2015-10-01' AND create_dt < DATE '2016-01-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2013Q1_ix01 on player_weapon_stats_2013Q1(create_dt);
-CREATE INDEX player_weap_stats_2013Q1_ix02 on player_weapon_stats_2013Q1(game_id);
-CREATE INDEX player_weap_stats_2013Q1_ix03 on player_weapon_stats_2013Q1(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2013Q1 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2015q4_ix001 on player_weapon_stats_2015q4(create_dt);
+CREATE INDEX player_weapon_stats_2015q4_ix002 on player_weapon_stats_2015q4(game_id);
+CREATE INDEX player_weapon_stats_2015q4_ix003 on player_weapon_stats_2015q4(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2013Q2 ( 
-    CHECK ( create_dt >= DATE '2013-04-01' AND create_dt < DATE '2013-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2016q1 ( 
+	CHECK ( create_dt >= DATE '2016-01-01' AND create_dt < DATE '2016-04-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2013Q2_ix01 on player_weapon_stats_2013Q2(create_dt);
-CREATE INDEX player_weap_stats_2013Q2_ix02 on player_weapon_stats_2013Q2(game_id);
-CREATE INDEX player_weap_stats_2013Q2_ix03 on player_weapon_stats_2013Q2(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2013Q2 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2016q1_ix001 on player_weapon_stats_2016q1(create_dt);
+CREATE INDEX player_weapon_stats_2016q1_ix002 on player_weapon_stats_2016q1(game_id);
+CREATE INDEX player_weapon_stats_2016q1_ix003 on player_weapon_stats_2016q1(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2013Q3 ( 
-    CHECK ( create_dt >= DATE '2013-07-01' AND create_dt < DATE '2013-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2016q2 ( 
+	CHECK ( create_dt >= DATE '2016-04-01' AND create_dt < DATE '2016-07-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2013Q3_ix01 on player_weapon_stats_2013Q3(create_dt);
-CREATE INDEX player_weap_stats_2013Q3_ix02 on player_weapon_stats_2013Q3(game_id);
-CREATE INDEX player_weap_stats_2013Q3_ix03 on player_weapon_stats_2013Q3(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2013Q3 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2016q2_ix001 on player_weapon_stats_2016q2(create_dt);
+CREATE INDEX player_weapon_stats_2016q2_ix002 on player_weapon_stats_2016q2(game_id);
+CREATE INDEX player_weapon_stats_2016q2_ix003 on player_weapon_stats_2016q2(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2013Q4 ( 
-    CHECK ( create_dt >= DATE '2013-10-01' AND create_dt < DATE '2014-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2016q3 ( 
+	CHECK ( create_dt >= DATE '2016-07-01' AND create_dt < DATE '2016-10-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2013Q4_ix01 on player_weapon_stats_2013Q4(create_dt);
-CREATE INDEX player_weap_stats_2013Q4_ix02 on player_weapon_stats_2013Q4(game_id);
-CREATE INDEX player_weap_stats_2013Q4_ix03 on player_weapon_stats_2013Q4(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2013Q4 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2016q3_ix001 on player_weapon_stats_2016q3(create_dt);
+CREATE INDEX player_weapon_stats_2016q3_ix002 on player_weapon_stats_2016q3(game_id);
+CREATE INDEX player_weapon_stats_2016q3_ix003 on player_weapon_stats_2016q3(player_id);
 
--- 2014
-CREATE TABLE xonstat.player_weapon_stats_2014Q1 ( 
-    CHECK ( create_dt >= DATE '2014-01-01' AND create_dt < DATE '2014-04-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2016q4 ( 
+	CHECK ( create_dt >= DATE '2016-10-01' AND create_dt < DATE '2017-01-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2014Q1_ix01 on player_weapon_stats_2014Q1(create_dt);
-CREATE INDEX player_weap_stats_2014Q1_ix02 on player_weapon_stats_2014Q1(game_id);
-CREATE INDEX player_weap_stats_2014Q1_ix03 on player_weapon_stats_2014Q1(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2014Q1 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2016q4_ix001 on player_weapon_stats_2016q4(create_dt);
+CREATE INDEX player_weapon_stats_2016q4_ix002 on player_weapon_stats_2016q4(game_id);
+CREATE INDEX player_weapon_stats_2016q4_ix003 on player_weapon_stats_2016q4(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2014Q2 ( 
-    CHECK ( create_dt >= DATE '2014-04-01' AND create_dt < DATE '2014-07-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2017q1 ( 
+	CHECK ( create_dt >= DATE '2017-01-01' AND create_dt < DATE '2017-04-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2014Q2_ix01 on player_weapon_stats_2014Q2(create_dt);
-CREATE INDEX player_weap_stats_2014Q2_ix02 on player_weapon_stats_2014Q2(game_id);
-CREATE INDEX player_weap_stats_2014Q2_ix03 on player_weapon_stats_2014Q2(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2014Q2 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2017q1_ix001 on player_weapon_stats_2017q1(create_dt);
+CREATE INDEX player_weapon_stats_2017q1_ix002 on player_weapon_stats_2017q1(game_id);
+CREATE INDEX player_weapon_stats_2017q1_ix003 on player_weapon_stats_2017q1(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2014Q3 ( 
-    CHECK ( create_dt >= DATE '2014-07-01' AND create_dt < DATE '2014-10-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2017q2 ( 
+	CHECK ( create_dt >= DATE '2017-04-01' AND create_dt < DATE '2017-07-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2014Q3_ix01 on player_weapon_stats_2014Q3(create_dt);
-CREATE INDEX player_weap_stats_2014Q3_ix02 on player_weapon_stats_2014Q3(game_id);
-CREATE INDEX player_weap_stats_2014Q3_ix03 on player_weapon_stats_2014Q3(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2014Q3 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2017q2_ix001 on player_weapon_stats_2017q2(create_dt);
+CREATE INDEX player_weapon_stats_2017q2_ix002 on player_weapon_stats_2017q2(game_id);
+CREATE INDEX player_weapon_stats_2017q2_ix003 on player_weapon_stats_2017q2(player_id);
 
-CREATE TABLE xonstat.player_weapon_stats_2014Q4 ( 
-    CHECK ( create_dt >= DATE '2014-10-01' AND create_dt < DATE '2015-01-01' ) 
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2017q3 ( 
+	CHECK ( create_dt >= DATE '2017-07-01' AND create_dt < DATE '2017-10-01' ) 
 ) INHERITS (player_weapon_stats);
 
-CREATE INDEX player_weap_stats_2014Q4_ix01 on player_weapon_stats_2014Q4(create_dt);
-CREATE INDEX player_weap_stats_2014Q4_ix02 on player_weapon_stats_2014Q4(game_id);
-CREATE INDEX player_weap_stats_2014Q4_ix03 on player_weapon_stats_2014Q4(player_id);
-ALTER TABLE xonstat.player_weapon_stats_2014Q4 OWNER TO xonstat;
+CREATE INDEX player_weapon_stats_2017q3_ix001 on player_weapon_stats_2017q3(create_dt);
+CREATE INDEX player_weapon_stats_2017q3_ix002 on player_weapon_stats_2017q3(game_id);
+CREATE INDEX player_weapon_stats_2017q3_ix003 on player_weapon_stats_2017q3(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2017q4 ( 
+	CHECK ( create_dt >= DATE '2017-10-01' AND create_dt < DATE '2018-01-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2017q4_ix001 on player_weapon_stats_2017q4(create_dt);
+CREATE INDEX player_weapon_stats_2017q4_ix002 on player_weapon_stats_2017q4(game_id);
+CREATE INDEX player_weapon_stats_2017q4_ix003 on player_weapon_stats_2017q4(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2018q1 ( 
+	CHECK ( create_dt >= DATE '2018-01-01' AND create_dt < DATE '2018-04-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2018q1_ix001 on player_weapon_stats_2018q1(create_dt);
+CREATE INDEX player_weapon_stats_2018q1_ix002 on player_weapon_stats_2018q1(game_id);
+CREATE INDEX player_weapon_stats_2018q1_ix003 on player_weapon_stats_2018q1(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2018q2 ( 
+	CHECK ( create_dt >= DATE '2018-04-01' AND create_dt < DATE '2018-07-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2018q2_ix001 on player_weapon_stats_2018q2(create_dt);
+CREATE INDEX player_weapon_stats_2018q2_ix002 on player_weapon_stats_2018q2(game_id);
+CREATE INDEX player_weapon_stats_2018q2_ix003 on player_weapon_stats_2018q2(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2018q3 ( 
+	CHECK ( create_dt >= DATE '2018-07-01' AND create_dt < DATE '2018-10-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2018q3_ix001 on player_weapon_stats_2018q3(create_dt);
+CREATE INDEX player_weapon_stats_2018q3_ix002 on player_weapon_stats_2018q3(game_id);
+CREATE INDEX player_weapon_stats_2018q3_ix003 on player_weapon_stats_2018q3(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2018q4 ( 
+	CHECK ( create_dt >= DATE '2018-10-01' AND create_dt < DATE '2019-01-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2018q4_ix001 on player_weapon_stats_2018q4(create_dt);
+CREATE INDEX player_weapon_stats_2018q4_ix002 on player_weapon_stats_2018q4(game_id);
+CREATE INDEX player_weapon_stats_2018q4_ix003 on player_weapon_stats_2018q4(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2019q1 ( 
+	CHECK ( create_dt >= DATE '2019-01-01' AND create_dt < DATE '2019-04-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2019q1_ix001 on player_weapon_stats_2019q1(create_dt);
+CREATE INDEX player_weapon_stats_2019q1_ix002 on player_weapon_stats_2019q1(game_id);
+CREATE INDEX player_weapon_stats_2019q1_ix003 on player_weapon_stats_2019q1(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2019q2 ( 
+	CHECK ( create_dt >= DATE '2019-04-01' AND create_dt < DATE '2019-07-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2019q2_ix001 on player_weapon_stats_2019q2(create_dt);
+CREATE INDEX player_weapon_stats_2019q2_ix002 on player_weapon_stats_2019q2(game_id);
+CREATE INDEX player_weapon_stats_2019q2_ix003 on player_weapon_stats_2019q2(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2019q3 ( 
+	CHECK ( create_dt >= DATE '2019-07-01' AND create_dt < DATE '2019-10-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2019q3_ix001 on player_weapon_stats_2019q3(create_dt);
+CREATE INDEX player_weapon_stats_2019q3_ix002 on player_weapon_stats_2019q3(game_id);
+CREATE INDEX player_weapon_stats_2019q3_ix003 on player_weapon_stats_2019q3(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2019q4 ( 
+	CHECK ( create_dt >= DATE '2019-10-01' AND create_dt < DATE '2020-01-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2019q4_ix001 on player_weapon_stats_2019q4(create_dt);
+CREATE INDEX player_weapon_stats_2019q4_ix002 on player_weapon_stats_2019q4(game_id);
+CREATE INDEX player_weapon_stats_2019q4_ix003 on player_weapon_stats_2019q4(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2020q1 ( 
+	CHECK ( create_dt >= DATE '2020-01-01' AND create_dt < DATE '2020-04-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2020q1_ix001 on player_weapon_stats_2020q1(create_dt);
+CREATE INDEX player_weapon_stats_2020q1_ix002 on player_weapon_stats_2020q1(game_id);
+CREATE INDEX player_weapon_stats_2020q1_ix003 on player_weapon_stats_2020q1(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2020q2 ( 
+	CHECK ( create_dt >= DATE '2020-04-01' AND create_dt < DATE '2020-07-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2020q2_ix001 on player_weapon_stats_2020q2(create_dt);
+CREATE INDEX player_weapon_stats_2020q2_ix002 on player_weapon_stats_2020q2(game_id);
+CREATE INDEX player_weapon_stats_2020q2_ix003 on player_weapon_stats_2020q2(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2020q3 ( 
+	CHECK ( create_dt >= DATE '2020-07-01' AND create_dt < DATE '2020-10-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2020q3_ix001 on player_weapon_stats_2020q3(create_dt);
+CREATE INDEX player_weapon_stats_2020q3_ix002 on player_weapon_stats_2020q3(game_id);
+CREATE INDEX player_weapon_stats_2020q3_ix003 on player_weapon_stats_2020q3(player_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_weapon_stats_2020q4 ( 
+	CHECK ( create_dt >= DATE '2020-10-01' AND create_dt < DATE '2021-01-01' ) 
+) INHERITS (player_weapon_stats);
+
+CREATE INDEX player_weapon_stats_2020q4_ix001 on player_weapon_stats_2020q4(create_dt);
+CREATE INDEX player_weapon_stats_2020q4_ix002 on player_weapon_stats_2020q4(game_id);
+CREATE INDEX player_weapon_stats_2020q4_ix003 on player_weapon_stats_2020q4(player_id);
