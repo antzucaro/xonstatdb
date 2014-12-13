@@ -111,6 +111,12 @@ insert into cd_weapon(weapon_cd, descr) values('tuba', '@!#%''n Tuba');
 insert into cd_weapon(weapon_cd, descr) values('hlac', 'Heavy Laser Assault Cannon');
 insert into cd_weapon(weapon_cd, descr) values('hook', 'Grappling Hook');
 insert into cd_weapon(weapon_cd, descr) values('porto', 'Port-O-Launch');
+insert into cd_weapon(weapon_cd, descr) values('blaster', 'Blaster');
+insert into cd_weapon(weapon_cd, descr) values('devastator', 'Devastator');
+insert into cd_weapon(weapon_cd, descr) values('machinegun', 'Machine Gun');
+insert into cd_weapon(weapon_cd, descr) values('mortar', 'Mortar');
+insert into cd_weapon(weapon_cd, descr) values('vaporizer', 'Vaporizer');
+insert into cd_weapon(weapon_cd, descr) values('vortex', 'Vortex');
 
 -- achievements
 insert into cd_achievement(achievement_cd, descr, active_ind)
