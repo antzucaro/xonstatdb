@@ -40,6 +40,12 @@ do
         then
             printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
         fi
+
+        if [[ $table = "games" ]]
+        then
+            printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s using gin(players);\n" $table $year $qtr $table $year $qtr
+        fi
+
         printf "\n"
     done
 done
