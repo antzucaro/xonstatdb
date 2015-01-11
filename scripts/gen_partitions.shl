@@ -30,6 +30,13 @@ do
         printf "CREATE INDEX %s_%s%s_ix001 on %s_%s%s(create_dt);\n" $table $year $qtr $table $year $qtr
 
         # conditional indexes that depend on the table
+        if [[ $table = "games" ]]
+        then
+            printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s using gin(players);\n" $table $year $qtr $table $year $qtr
+            # TODO(divVerent): This index probably should be a primary key instead.
+            printf "CREATE INDEX %s_%s%s_ix003 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
+        fi
+        
         if [[ $table = "player_game_stats" || $table = "player_weapon_stats" ]]
         then
             printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
