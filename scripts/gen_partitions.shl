@@ -33,8 +33,8 @@ do
         if [[ $table = "games" ]]
         then
             printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s using gin(players);\n" $table $year $qtr $table $year $qtr
-            # TODO(divVerent): This index probably should be a primary key instead.
-            printf "CREATE INDEX %s_%s%s_ix003 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
+            printf "CREATE UNIQUE INDEX %s_%s%s_pk on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
+            printf "ALTER TABLE %s_%s%s ADD PRIMARY KEY USING INDEX %s_%s%s_pk;\n" $table $year $qtr $table $year $qtr
         fi
         
         if [[ $table = "player_game_stats" || $table = "player_weapon_stats" ]]
