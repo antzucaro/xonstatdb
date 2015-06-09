@@ -9,6 +9,7 @@ CREATE TABLE xonstat.servers
   public_key character varying(725),
   revision character varying(50),
   pure_ind boolean NOT NULL DEFAULT true,
+  impure_cvars integer NULL,
   active_ind boolean NOT NULL DEFAULT true,
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT servers_pk PRIMARY KEY (server_id)
