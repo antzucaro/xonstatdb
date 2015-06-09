@@ -5,6 +5,7 @@ CREATE TABLE xonstat.player_map_captimes
   map_id integer NOT NULL,
   game_id bigint NOT NULL,
   fastest_cap interval NOT NULL,
+  mod character varying(30),
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT player_map_captimes_pk PRIMARY KEY (player_map_captime_id),
   CONSTRAINT player_map_captimes_uk01 UNIQUE (player_id, map_id),
