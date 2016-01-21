@@ -8,12 +8,13 @@ begin;
     delete from player_ranks;
 
     insert into player_ranks(player_id, nick, game_type_cd, elo, rank)
-    select p.player_id, p.nick, pe.game_type_cd, pe.elo, rank() 
-    over (partition by pe.game_type_cd order by pe.elo desc)
+    select p.player_id, p.nick, pe.game_type_cd, pe.elo, row_number() 
+    over (partition by pe.game_type_cd order by pe.elo desc, pe.create_dt)
     from players p, player_elos pe
     where p.player_id = pe.player_id
     and p.active_ind = True
     and pe.active_ind = True
-    and pe.games >= 32;
+    and pe.games >= 32
+    and pe.elo > 100;
 
 end;
