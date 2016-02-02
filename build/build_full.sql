@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists active_maps_mv;
 drop table if exists active_servers_mv;
 drop table if exists active_players_mv;
 drop table if exists summary_stats_mv;
@@ -59,6 +60,7 @@ drop table if exists players cascade;
 \i tables/summary_stats_mv.tab
 \i tables/active_players_mv.tab
 \i tables/active_servers_mv.tab
+\i tables/active_maps_mv.tab
 
 begin;
 
