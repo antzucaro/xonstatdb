@@ -46,7 +46,7 @@ Create the schema in which all of the xonstat tables will reside:
     CREATE SCHEMA xonstat
         AUTHORIZATION xonstat;
 
-Create the pgplsql language, if it doesn't exist:
+Create the plpgsql language, if it doesn't exist:
 
     CREATE LANGUAGE plpgsql;
 
