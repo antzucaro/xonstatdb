@@ -17,17 +17,9 @@ begin
         raise exception 'Both servers have hashkeys and they are different! Not merging.';
     end if;
 
-    -- fill in the "important" missing attributes
-    if w_server.ip_addr is null and l_server.ip_addr is not null then
-        w_server.ip_addr := l_server.ip_addr;
-    end if;
-
+    -- fill in the hashkey (everything else will be handled by xonstat)
     if w_server.hashkey is null and l_server.hashkey is not null then
         w_server.hashkey := l_server.hashkey;
-    end if;
-
-    if w_server.revision is null and l_server.revision is not null then
-        w_server.revision := l_server.revsion;
     end if;
 
     -- games get moved to the new server
