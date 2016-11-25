@@ -1,0 +1,13 @@
+CREATE TABLE xonstat.merged_servers
+(
+  winning_server_id integer NOT NULL,
+  losing_server_id integer NOT NULL,
+  unmerged_ind boolean NOT NULL DEFAULT false,
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
+  CONSTRAINT merged_servers_pk PRIMARY KEY (winning_server_id, losing_server_id)
+)
+WITH (
+  OIDS=FALSE
+);
+
+ALTER TABLE xonstat.merged_servers OWNER TO xonstat;
