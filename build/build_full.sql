@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists merged_servers;
 drop table if exists player_medals;
 drop table if exists active_maps_mv;
 drop table if exists active_servers_mv;
