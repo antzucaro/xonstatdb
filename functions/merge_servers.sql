@@ -39,6 +39,8 @@ begin
     update servers set active_ind = false where server_id = p_loser_server_id;
 
     raise notice 'Server #% deactivated.', p_loser_server_id;
+
+    insert into merged_servers(winning_server_id, losing_server_id) values(p_winner_server_id, p_loser_server_id);
 end;
 $$
 language plpgsql;
