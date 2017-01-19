@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# This script is used to create data snapshots that don't disclose any
+# identifying player or server information.
+
+psql -U xonstat -h localhost xonstatdb <<EOF
+-- remove email addresses
+update players set email_addr = NULL where email_addr IS NOT NULL;
+
+-- sanitize the server hashkeys
+update servers set hashkey = server_id where hashkey IS NOT NULL;
+
+-- create a sequence to sanitize the player hashkeys
+create sequence sanitize_seq;
+
+-- sanitize all player hashkeys
+update hashkeys set hashkey = nextval('sanitize_seq');
+
+-- get rid of the sequence
+drop sequence sanitize_seq;
+EOF
+
+# create a backup of the database
+DATE=$(/bin/date +'%Y%m%d')
+
+# backup to a compressed file loadable by the "drop_and_load.shl" script
+pg_dump -c -U xonstat -h localhost -n xonstat --format=custom --compress=9
+xonstatdb > ${DATE}_xonstatdb_snapshot.dmp
