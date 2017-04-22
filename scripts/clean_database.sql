@@ -1,0 +1,22 @@
+-- cleans the database for Elo testing and comparison
+truncate table games cascade;
+truncate table maps cascade;
+truncate table servers cascade;
+truncate table player_game_stats cascade;
+truncate table player_weapon_stats cascade;
+truncate table hashkeys cascade;
+truncate table player_elos cascade;
+truncate table player_nicks cascade;
+truncate table player_ranks cascade;
+truncate table achievements cascade;
+truncate table hashkeys cascade;
+truncate table player_elos cascade;
+truncate table player_game_anticheats cascade;
+truncate table player_game_stats cascade;
+truncate table player_groups cascade;
+truncate table player_map_captimes cascade;
+truncate table player_medals cascade;
+truncate table player_nicks cascade;
+truncate table player_ranks cascade;
+truncate table player_weapon_stats cascade;
+delete from players where player_id > 2;
