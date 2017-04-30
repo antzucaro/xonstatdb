@@ -11,6 +11,7 @@ CREATE TABLE xonstat.servers
   pure_ind boolean NOT NULL DEFAULT true,
   impure_cvars integer NULL,
   elo_ind boolean NOT NULL DEFAULT true,
+  categories character varying(10)[],
   active_ind boolean NOT NULL DEFAULT true,
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT servers_pk PRIMARY KEY (server_id)
