@@ -1,0 +1,26 @@
+CREATE TABLE xonstat.player_agg_stats_mv
+(
+  player_id integer NOT NULL,
+  game_type_cd character varying(10),
+  nick character varying(128),
+  stripped_nick character varying(128),
+  last_seen timestamp without time zone,
+  games integer,
+  wins integer,
+  losses integer,
+  kills integer,
+  deaths integer,
+  suicides integer,
+  captures integer,
+  pickups integer,
+  drops integer,
+  carrier_frags integer,
+  alivetime interval,
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
+  CONSTRAINT player_agg_stats_mv_pk PRIMARY KEY (player_id, game_type_cd),
+)
+WITH (
+  OIDS=FALSE
+);
+
+ALTER TABLE xonstat.player_agg_stats_mv OWNER TO xonstat;
