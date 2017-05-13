@@ -15,9 +15,9 @@ CREATE TABLE xonstat.player_agg_stats_mv
   pickups integer,
   drops integer,
   carrier_frags integer,
-  alivetime interval,
+  alivetime bigint,
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
-  CONSTRAINT player_agg_stats_mv_pk PRIMARY KEY (player_id, game_type_cd),
+  CONSTRAINT player_agg_stats_mv_pk PRIMARY KEY (player_id, game_type_cd)
 )
 WITH (
   OIDS=FALSE
