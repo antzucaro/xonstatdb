@@ -26,6 +26,13 @@ Next, create the database itself:
         OWNER=xonstat
         CONNECTION LIMIT=-1;
 
+If you intend to use the `drop_and_load.shl` script in the scripts folder, you may want to give
+the application user superuser within the database. To do that you can use the following command:
+
+    postgres=# alter user xonstat with superuser;
+
+When done, exit the psql prompt: 
+
     postgres=# \q
 
 Next, as your regular system user, log into the newly created database
@@ -60,7 +67,8 @@ And that's it!
 
 Do note that there are a few maintenance scripts that can be used
 once the database begins accumulating data. These can be found in 
-the scripts subdirectory. A summary of what they do follows:
+the scripts subdirectory and are intended to be implemented as cron jobs. 
+A summary of what they do follows:
 
   update\_elos.sql - will decrease player elo records by one point 
                     day for every day after 30 days of inactivity
@@ -70,6 +78,10 @@ the scripts subdirectory. A summary of what they do follows:
 
   update\_ranks.sql - will populate the player\_ranks table each day
                      according to the elo values when it is run.
+
+  refresh\_$TABLE\_mv.sql - updates the "materialized view" named by $TABLE.
+
+  purge\_anticheat\_log.sql - deletes old anticheat data.
 
 There is also a "merge players" function in the functions sub-
 directory. This can be used to merge two players together into one
