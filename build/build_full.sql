@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists player_game_frag_matrix;
 drop table if exists player_agg_stats_mv;
 drop table if exists merged_servers;
 drop table if exists player_medals;
@@ -67,6 +68,7 @@ drop table if exists players cascade;
 \i tables/player_medals.tab
 \i tables/merged_servers.tab
 \i tables/player_agg_stats_mv.tab
+\i tables/player_game_frag_matrix.tab
 
 begin;
 
