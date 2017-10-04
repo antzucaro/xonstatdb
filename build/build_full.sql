@@ -218,6 +218,7 @@ insert into players (nick) values ('Untracked Player');
 \i triggers/player_game_stats_ins_trg.sql
 \i triggers/player_weapon_stats_ins_trg.sql
 \i triggers/team_game_stats_ins_trg.sql
+\i triggers/player_game_frag_matrix_ins_trg.sql
 
 -- version tracking
 insert into db_version(version, descr) values('1.0.0', 'Initial build');
