@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists player_game_frag_matrix;
 drop table if exists player_agg_stats_mv;
 drop table if exists merged_servers;
 drop table if exists player_medals;
@@ -67,6 +68,7 @@ drop table if exists players cascade;
 \i tables/player_medals.tab
 \i tables/merged_servers.tab
 \i tables/player_agg_stats_mv.tab
+\i tables/player_game_frag_matrix.tab
 
 begin;
 
@@ -216,6 +218,7 @@ insert into players (nick) values ('Untracked Player');
 \i triggers/player_game_stats_ins_trg.sql
 \i triggers/player_weapon_stats_ins_trg.sql
 \i triggers/team_game_stats_ins_trg.sql
+\i triggers/player_game_frag_matrix_ins_trg.sql
 
 -- version tracking
 insert into db_version(version, descr) values('1.0.0', 'Initial build');
