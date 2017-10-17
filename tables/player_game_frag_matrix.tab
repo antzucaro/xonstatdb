@@ -4,7 +4,7 @@ CREATE TABLE xonstat.player_game_frag_matrix
   player_game_stat_id bigint NOT NULL,
   player_id integer NOT NULL,
   player_index smallint NOT NULL,
-  matrix jsonb NOT NULL,
+  matrix json NOT NULL,
   create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
   CONSTRAINT player_game_frag_matrix_pk PRIMARY KEY (game_id, player_game_stat_id),
   CONSTRAINT player_game_frag_matrix_fk001 FOREIGN KEY (game_id)
