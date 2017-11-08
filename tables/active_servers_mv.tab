@@ -2,7 +2,7 @@ create table active_servers_mv(
 	sort_order integer,
 	server_id bigint,
 	server_name character varying(128),
-	games integer,
+	play_time interval,
 	create_dt timestamp without time zone default (now() at time zone 'UTC'),
     CONSTRAINT active_servers_mv_pk PRIMARY KEY (sort_order)
 );
