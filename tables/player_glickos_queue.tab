@@ -1,0 +1,11 @@
+CREATE TABLE xonstat.player_glickos_queue
+(
+  game_id bigint NOT NULL,
+  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
+  update_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
+  CONSTRAINT player_glickos_queue_pk PRIMARY KEY (game_id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE xonstat.player_glickos_queue OWNER TO xonstat;
