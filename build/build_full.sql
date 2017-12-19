@@ -1,4 +1,7 @@
 -- drop tables first in reverse order
+drop table if exists player_glickos_queue;
+drop table if exists player_glickos_base;
+drop table if exists player_glickos_current;
 drop table if exists player_game_frag_matrix;
 drop table if exists player_agg_stats_mv;
 drop table if exists merged_servers;
@@ -69,6 +72,9 @@ drop table if exists players cascade;
 \i tables/merged_servers.tab
 \i tables/player_agg_stats_mv.tab
 \i tables/player_game_frag_matrix.tab
+\i tables/player_glickos_queue.tab
+\i tables/player_glickos_base.tab
+\i tables/player_glickos_current.tab
 
 begin;
 
