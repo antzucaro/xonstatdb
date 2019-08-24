@@ -138,7 +138,7 @@ insert into cd_weapon(weapon_cd, descr) values('okhmg', 'Overkill Heavy Machine 
 insert into cd_weapon(weapon_cd, descr) values('oknex', 'Overkill Nex');
 insert into cd_weapon(weapon_cd, descr) values('okshotgun', 'Overkill Shotgun');
 insert into cd_weapon(weapon_cd, descr) values('okmachinegun', 'Overkill Machine Gun');
-insert into cd_weapon(weapon_cd, descr) values('okrpc', 'Overkill RPC');
+insert into cd_weapon(weapon_cd, descr) values('okrpc', 'Overkill Rocket-Propelled Chainsaw');
 
 -- achievements
 insert into cd_achievement(achievement_cd, descr, active_ind)
