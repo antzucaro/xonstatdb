@@ -37,7 +37,7 @@ do
             printf "ALTER TABLE %s_%s%s ADD PRIMARY KEY USING INDEX %s_%s%s_pk;\n" $table $year $qtr $table $year $qtr
         fi
         
-        if [[ $table = "player_game_stats" || $table = "player_weapon_stats" ]]
+        if [[ $table = "player_game_stats" || $table = "player_weapon_stats" || $table = "player_game_nonparticipants" ]]
         then
             printf "CREATE INDEX %s_%s%s_ix002 on %s_%s%s(game_id);\n" $table $year $qtr $table $year $qtr
             printf "CREATE INDEX %s_%s%s_ix003 on %s_%s%s(player_id);\n" $table $year $qtr $table $year $qtr
