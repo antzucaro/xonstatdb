@@ -123,3 +123,124 @@ CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2020q4 (
 
 CREATE INDEX player_game_frag_matrix_2020q4_ix001 on player_game_frag_matrix_2020q4(create_dt);
 CREATE INDEX player_game_frag_matrix_2020q4_ix002 on player_game_frag_matrix_2020q4(game_id);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2021q1 ( 
+	CHECK ( create_dt >= DATE '2021-01-01' AND create_dt < DATE '2021-04-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2021q1_ix001 on player_game_frag_matrix_2021q1(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2021q2 ( 
+	CHECK ( create_dt >= DATE '2021-04-01' AND create_dt < DATE '2021-07-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2021q2_ix001 on player_game_frag_matrix_2021q2(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2021q3 ( 
+	CHECK ( create_dt >= DATE '2021-07-01' AND create_dt < DATE '2021-10-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2021q3_ix001 on player_game_frag_matrix_2021q3(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2021q4 ( 
+	CHECK ( create_dt >= DATE '2021-10-01' AND create_dt < DATE '2022-01-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2021q4_ix001 on player_game_frag_matrix_2021q4(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2022q1 ( 
+	CHECK ( create_dt >= DATE '2022-01-01' AND create_dt < DATE '2022-04-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2022q1_ix001 on player_game_frag_matrix_2022q1(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2022q2 ( 
+	CHECK ( create_dt >= DATE '2022-04-01' AND create_dt < DATE '2022-07-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2022q2_ix001 on player_game_frag_matrix_2022q2(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2022q3 ( 
+	CHECK ( create_dt >= DATE '2022-07-01' AND create_dt < DATE '2022-10-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2022q3_ix001 on player_game_frag_matrix_2022q3(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2022q4 ( 
+	CHECK ( create_dt >= DATE '2022-10-01' AND create_dt < DATE '2023-01-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2022q4_ix001 on player_game_frag_matrix_2022q4(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2023q1 ( 
+	CHECK ( create_dt >= DATE '2023-01-01' AND create_dt < DATE '2023-04-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2023q1_ix001 on player_game_frag_matrix_2023q1(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2023q2 ( 
+	CHECK ( create_dt >= DATE '2023-04-01' AND create_dt < DATE '2023-07-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2023q2_ix001 on player_game_frag_matrix_2023q2(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2023q3 ( 
+	CHECK ( create_dt >= DATE '2023-07-01' AND create_dt < DATE '2023-10-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2023q3_ix001 on player_game_frag_matrix_2023q3(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2023q4 ( 
+	CHECK ( create_dt >= DATE '2023-10-01' AND create_dt < DATE '2024-01-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2023q4_ix001 on player_game_frag_matrix_2023q4(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2024q1 ( 
+	CHECK ( create_dt >= DATE '2024-01-01' AND create_dt < DATE '2024-04-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2024q1_ix001 on player_game_frag_matrix_2024q1(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2024q2 ( 
+	CHECK ( create_dt >= DATE '2024-04-01' AND create_dt < DATE '2024-07-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2024q2_ix001 on player_game_frag_matrix_2024q2(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2024q3 ( 
+	CHECK ( create_dt >= DATE '2024-07-01' AND create_dt < DATE '2024-10-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2024q3_ix001 on player_game_frag_matrix_2024q3(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2024q4 ( 
+	CHECK ( create_dt >= DATE '2024-10-01' AND create_dt < DATE '2025-01-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2024q4_ix001 on player_game_frag_matrix_2024q4(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2025q1 ( 
+	CHECK ( create_dt >= DATE '2025-01-01' AND create_dt < DATE '2025-04-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2025q1_ix001 on player_game_frag_matrix_2025q1(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2025q2 ( 
+	CHECK ( create_dt >= DATE '2025-04-01' AND create_dt < DATE '2025-07-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2025q2_ix001 on player_game_frag_matrix_2025q2(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2025q3 ( 
+	CHECK ( create_dt >= DATE '2025-07-01' AND create_dt < DATE '2025-10-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2025q3_ix001 on player_game_frag_matrix_2025q3(create_dt);
+
+CREATE TABLE IF NOT EXISTS xonstat.player_game_frag_matrix_2025q4 ( 
+	CHECK ( create_dt >= DATE '2025-10-01' AND create_dt < DATE '2026-01-01' ) 
+) INHERITS (player_game_frag_matrix);
+
+CREATE INDEX player_game_frag_matrix_2025q4_ix001 on player_game_frag_matrix_2025q4(create_dt);
+

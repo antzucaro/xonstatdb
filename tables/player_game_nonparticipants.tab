@@ -21,10 +21,10 @@ WITH (
   OIDS=FALSE
 );
 
-CREATE INDEX player_game_nonparticipant_ix01 on player_game_nonparticipantss(create_dt);
-CREATE INDEX player_game_nonparticipant_ix02 on player_game_nonparticipantss(game_id);
-CREATE INDEX player_game_nonparticipant_ix03 on player_game_nonparticipantss(player_id);
-ALTER TABLE xonstat.player_game_stats OWNER TO xonstat;
+CREATE INDEX player_game_nonparticipant_ix01 on player_game_nonparticipants(create_dt);
+CREATE INDEX player_game_nonparticipant_ix02 on player_game_nonparticipants(game_id);
+CREATE INDEX player_game_nonparticipant_ix03 on player_game_nonparticipants(player_id);
+ALTER TABLE xonstat.player_game_nonparticipants OWNER TO xonstat;
 
 CREATE TABLE IF NOT EXISTS xonstat.player_game_nonparticipants_2020q4 ( 
 	CHECK ( create_dt >= DATE '2020-10-01' AND create_dt < DATE '2021-01-01' ) 
