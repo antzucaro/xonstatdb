@@ -19,4 +19,5 @@ truncate table player_medals cascade;
 truncate table player_nicks cascade;
 truncate table player_ranks cascade;
 truncate table player_weapon_stats cascade;
+truncate table player_game_nonparticipants cascade;
 delete from players where player_id > 2;
