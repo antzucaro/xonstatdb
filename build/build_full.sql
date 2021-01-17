@@ -1,4 +1,5 @@
 -- drop tables first in reverse order
+drop table if exists player_skills;
 drop table if exists player_game_nonparticipants;
 drop table if exists player_game_frag_matrix;
 drop table if exists player_agg_stats_mv;
@@ -71,6 +72,7 @@ drop table if exists players cascade;
 \i tables/player_agg_stats_mv.tab
 \i tables/player_game_frag_matrix.tab
 \i tables/player_game_nonparticipants.tab
+\i tables/player_skills.tab
 
 begin;
 
