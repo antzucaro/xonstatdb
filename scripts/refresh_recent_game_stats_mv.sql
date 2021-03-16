@@ -16,8 +16,8 @@ BEGIN;
     AND g.create_dt BETWEEN (now() at time zone 'UTC' - interval '30 days') AND (now() at time zone 'UTC' + interval '1 day');
 
     -- Index it
-    CREATE INDEX recent_game_stats_mv_new_ix001 on recent_game_stats(server_id);
-    CREATE INDEX recent_game_stats_mv_new_ix002 on recent_game_stats(map_id);
+    CREATE INDEX recent_game_stats_mv_new_ix001 on recent_game_stats_mv_new(server_id);
+    CREATE INDEX recent_game_stats_mv_new_ix002 on recent_game_stats_mv_new(map_id);
 
     -- Drop the old stuff, rename the stuff
     DROP TABLE IF EXISTS recent_game_stats_mv CASCADE;
