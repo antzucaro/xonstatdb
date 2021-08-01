@@ -3,7 +3,8 @@ BEGIN;
     CREATE TABLE recent_game_stats_mv_new AS
 
     SELECT 
-    pgs.player_game_stat_id, g.game_id, g.server_id, g.map_id, p.player_id, p.nick, pgs.score, pgs.alivetime
+    pgs.player_game_stat_id, g.game_id, g.server_id, g.map_id, p.player_id, p.nick, pgs.score, 
+    pgs.alivetime, g.create_dt
 
     FROM player_game_stats pgs
     INNER JOIN players p USING (player_id)
@@ -19,7 +20,7 @@ BEGIN;
     CREATE INDEX recent_game_stats_mv_new_ix001 on recent_game_stats_mv_new(server_id);
     CREATE INDEX recent_game_stats_mv_new_ix002 on recent_game_stats_mv_new(map_id);
 
-    -- Drop the old stuff, rename the stuff
+    -- Drop the old stuff, rename the new stuff
     DROP TABLE IF EXISTS recent_game_stats_mv CASCADE;
     ALTER TABLE recent_game_stats_mv_new RENAME TO recent_game_stats_mv;
 
