@@ -76,6 +76,8 @@ begin
     join
        players p 
           on p.player_id = agg_stats.player_id            
+       where
+          p.active_ind = true
        group by
           p.player_id,
           p.nick,

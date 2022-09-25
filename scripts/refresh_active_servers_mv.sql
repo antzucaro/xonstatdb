@@ -10,6 +10,7 @@ begin
     from servers s join games g on g.server_id = s.server_id
     join player_game_stats pgs on g.game_id = pgs.game_id
     where pgs.player_id > 1
+    and s.active_ind = true
     and g.create_dt > cutoff
     and pgs.create_dt > cutoff
     group by s.server_id, s.name
