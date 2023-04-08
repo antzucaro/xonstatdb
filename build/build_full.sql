@@ -111,6 +111,10 @@ insert into cd_game_type(game_type_cd, descr)
 values('tdm', 'Team Deathmatch');
 insert into cd_game_type(game_type_cd, descr)
 values('duel', 'Duel');
+insert into cd_game_type(game_type_cd, descr)
+values('mayhem', 'Mayhem');
+insert into cd_game_type(game_type_cd, descr)
+values('tmayhem', 'Team Mayhem');
 
 -- weapons
 insert into cd_weapon(weapon_cd, descr) values('laser', 'Laser');
