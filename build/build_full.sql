@@ -94,6 +94,8 @@ values('ft', 'Freezetag');
 insert into cd_game_type(game_type_cd, descr)
 values('ka', 'Keepaway');
 insert into cd_game_type(game_type_cd, descr)
+values('tka', 'Team Keepaway');
+insert into cd_game_type(game_type_cd, descr)
 values('kh', 'Keyhunt');
 insert into cd_game_type(game_type_cd, descr)
 values('lms', 'Last Man Standing');
