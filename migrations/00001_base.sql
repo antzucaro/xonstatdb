@@ -1836,20 +1836,16 @@ CREATE INDEX IF NOT EXISTS player_game_anticheats_ix02 on player_game_anticheats
 ALTER TABLE xonstat.player_game_anticheats OWNER TO xonstat;
 
 -- summary_stats_mv
-CREATE TABLE IF NOT EXISTS xonstat.summary_stats
-(
-  summary_stats_id bigserial NOT NULL,
-  total_players bigint NOT NULL,
-  total_servers bigint NOT NULL,
-  total_games bigint NOT NULL,
-  total_dm_games bigint NOT NULL,
-  total_duel_games bigint NOT NULL,
-  total_ctf_games bigint NOT NULL,
-  create_dt timestamp without time zone NOT NULL DEFAULT (current_timestamp at time zone 'UTC'),
-  CONSTRAINT summary_stats_pk PRIMARY KEY (summary_stats_id)
+CREATE TABLE summary_stats_mv (
+	scope character varying(30),
+	sort_order integer,
+	num_players integer,
+	game_type_cd character varying(10),
+	num_games integer,
+    create_dt timestamp without time zone default (now() at time zone 'UTC')
 );
 
-ALTER TABLE xonstat.summary_stats OWNER TO xonstat;
+ALTER TABLE xonstat.summary_stats_mv OWNER TO xonstat;
 
 -- active_players_mv
 CREATE TABLE IF NOT EXISTS active_players_mv(
@@ -2941,7 +2937,6 @@ DROP TABLE IF EXISTS active_players_mv CASCADE;
 DROP TABLE IF EXISTS summary_stats_mv CASCADE;
 DROP TABLE IF EXISTS player_game_anticheats CASCADE;
 DROP TABLE IF EXISTS team_game_stats CASCADE;
-DROP TABLE IF EXISTS summary_stats CASCADE;
 DROP TABLE IF EXISTS player_map_captimes CASCADE;
 DROP TABLE IF EXISTS hashkeys CASCADE;
 DROP TABLE IF EXISTS player_weapon_stats CASCADE;
