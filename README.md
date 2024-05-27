@@ -1,9 +1,17 @@
-This is the source for **xonstatdb**, the [Xonotic][xonotic] [Statistics database][xonstat].
+# XonStatDB
+
+This is the source for the database underlying [XonStat][xonstat], the statistics application for the arena-style FPS [Xonotic][xonotic]. 
 All code herein is intended for the PostgreSQL database management server.
 
-----
+## Clone
 
-To build, first create the user that will own all of the objects in the database.
+```
+git clone git@gitlab.com:xonotic/xonstatdb.git
+```
+
+## Prepare
+
+Prepare the database by first creating the user that will own all of the objects in the database.
 You must run this as an administrator user in your cluster.
 See your operating system's guidelines for how this is set up on your system.
 
@@ -46,56 +54,50 @@ like *Peer authentication failed for user "xonstat"*:
 
     $ psql -h localhost -U xonstat xonstatdb
 
-Create the schema in which all of the xonstat tables will reside:
-
-    xonstatdb=>
-    
-    CREATE SCHEMA xonstat
-        AUTHORIZATION xonstat;
 
 Create the plpgsql language, if it doesn't exist:
 
     CREATE LANGUAGE plpgsql;
 
-Now load the initial tables:
+## Initialize
 
-    \i build/build_full.sql
+Initial schema setup and subsequent migrations for XonStatDB are handled using [goose][goose]. You may want to familiarize yourself with that tool before proceeding. 
 
-   *Note: You will see a lot of NOTICE messages. This is normal.*
+```
+goose postgres "user=xonstat host=localhost dbname=xonstatdb sslmode=disable password=$PASSWORD" up
+```
 
-And that's it!
+That's it!
 
-Do note that there are a few maintenance scripts that can be used
+## Maintenance Scripts
+
+There are a few maintenance scripts that can be used
 once the database begins accumulating data. These can be found in 
-the scripts subdirectory and are intended to be implemented as cron jobs. 
+the scripts subdirectory and are intended to be implemented as cron jobs.
+ 
 A summary of what they do follows:
 
-  update\_elos.sql - will decrease player elo records by one point 
-                    day for every day after 30 days of inactivity
-                    until they hit the elo "floor" of 100. This 
-                    prevents inactive players from staying on the 
-                    leaderboard/ranks for too long.
+- refresh_*.sh: refreshes data in various materialized views
+- purge_anticheat_log.sh: prunes the anticheat signal data 
 
-  update\_ranks.sql - will populate the player\_ranks table each day
-                     according to the elo values when it is run.
+An example crontab using these: 
+```
+# refresh the materialized views in xonstatdb
+00 07 * * * ~/bin/refresh_summary_stats.sh
+10 07 * * * ~/bin/refresh_active_players.sh
+15 07 * * * ~/bin/refresh_active_servers.sh
+20 07 * * * ~/bin/refresh_active_maps.sh
+25 07 * * * ~/bin/refresh_recent_game_stats.sh
 
-  refresh\_$TABLE\_mv.sql - updates the "materialized view" named by $TABLE.
+# prune the anticheats
+20 08 * * * ~/bin/purge_anticheat_log.sh
+```
 
-  purge\_anticheat\_log.sql - deletes old anticheat data.
-
-There is also a "merge players" function in the functions sub-
-directory. This can be used to merge two players together into one
-record in the presentation layer of XonStat. It can be run as follows:
-
-  select merge\_players(winner\_player\_id, loser\_player\_id);
-
-The "winner" player ID is the account that remains active after the
-transaction.
-
-Enjoy!
+ 
 
 [xonotic]: http://www.xonotic.org/
 [xonstat]: http://stats.xonotic.org/
+[goose]: https://github.com/pressly/goose
 
 ----
 
