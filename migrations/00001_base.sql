@@ -1836,7 +1836,7 @@ CREATE INDEX IF NOT EXISTS player_game_anticheats_ix02 on player_game_anticheats
 ALTER TABLE xonstat.player_game_anticheats OWNER TO xonstat;
 
 -- summary_stats_mv
-CREATE TABLE summary_stats_mv (
+CREATE TABLE IF NOT EXISTS summary_stats_mv (
 	scope character varying(30),
 	sort_order integer,
 	num_players integer,
