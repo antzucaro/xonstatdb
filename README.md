@@ -61,10 +61,13 @@ Create the plpgsql language, if it doesn't exist:
 
 ## Initialize
 
-Initial schema setup and subsequent migrations for XonStatDB are handled using [goose][goose]. You may want to familiarize yourself with that tool before proceeding. 
+Initial schema setup and subsequent migrations for XonStatDB are handled using [goose][goose]. 
+You may want to familiarize yourself with that tool before proceeding. 
+All migrations are located in the `migrations` directory of this repo, so a typical invocation will
+look like this:
 
 ```
-goose postgres "user=xonstat host=localhost dbname=xonstatdb sslmode=disable password=$PASSWORD" up
+goose -dir migrations postgres "user=xonstat host=localhost dbname=xonstatdb sslmode=disable password=$PASSWORD" up
 ```
 
 That's it!
